@@ -1,7 +1,9 @@
 package cn.tanjianff.test2;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.*;
 import android.widget.Button;
@@ -25,7 +27,10 @@ public class MainActivity extends AppCompatActivity {
     public Counts take = null;
 
     private int[] btnidTake = {R.id.btn_div, R.id.btn_mult, R.id.btn_sub,
-            R.id.btn_add,R.id.btn_sum};
+            R.id.btn_add, R.id.btn_sum};
+
+    private int[] btn_octto = {R.id.binary, R.id.otc, R.id.oct, R.id.hex};
+    private Button[] btn_oct2orthers = new Button[btn_octto.length];
 
     private Button[] buttonTake = new Button[btnidTake.length];
 
@@ -41,25 +46,41 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        int mCurrentOrientation = getResources().getConfiguration().orientation;
+        if (mCurrentOrientation == Configuration.ORIENTATION_PORTRAIT) {
+            setContentView(R.layout.activity_main);
+
+        } else if (mCurrentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+            //If current screen is landscape
+            setContentView(R.layout.activity_main);
+
+            /*由于横竖屏切换后,会渲染进制转换的button,因此,要考虑分情况绑定,如果在竖屏情况下绑定竖屏里面没有的
+            * 视图,会出现空指针的情况,要注意*/
+            Oct2others to = new Oct2others();
+            for (int j = 0; j < btn_octto.length; j++) {
+                btn_oct2orthers[j] = (Button) findViewById(btn_octto[j]);
+                btn_oct2orthers[j].setOnClickListener(to);
+            }
+        }
+
         gly = (GridLayout) findViewById(R.id.gly);
         print = (TextView) findViewById(R.id.showWindow);
         GetNumber get = new GetNumber();
+        Compute cm = new Compute();
+
 
         for (int i = 0; i < btnidNum.length; i++) {
             buttons[i] = (Button) findViewById(btnidNum[i]);
             buttons[i].setOnClickListener(get);
         }
 
-        Compute cm = new Compute();
-
         for (int i = 0; i < btnidTake.length; i++) {
             buttonTake[i] = (Button) findViewById(btnidTake[i]);
             buttonTake[i].setOnClickListener(cm);
         }
 
-
         Button eq = (Button) findViewById(R.id.btn_sum);
+
 
         eq.setOnClickListener(new OnClickListener() {
             @Override
@@ -76,19 +97,6 @@ public class MainActivity extends AppCompatActivity {
                         flag = 1;
                     }
                 }
-            }
-        });
-
-        Button cleargo = (Button) findViewById(R.id.btn_cleanone);
-        cleargo.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (sum.length() > 1) {
-                    sum = sum.substring(0, sum.length() - 1);
-                } else {
-                    sum = "0";
-                }
-                print.setText(sum.toString());
             }
         });
 
@@ -116,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 sum = "0";
             if (sum.equals("0")) {
                 print.setText("");
-                sum = (v.getId()==R.id.btn_dot)? "0" : "";
+                sum = (v.getId() == R.id.btn_dot) ? "0" : "";
             }
             String txt = ((Button) v).getText().toString();
             boolean s = Pattern.matches("-*(\\d+).?(\\d)*", sum + txt);
@@ -147,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
             sum = "0";
             flag = 0;
         }
-
     }
 
     class OnTake implements OnClickListener {
@@ -159,14 +166,41 @@ public class MainActivity extends AppCompatActivity {
                     int stratindex = numss.toString().contains(".") ? numss.toString().indexOf(".") : 0;
                     sum = numss.toString().length() > 13 ? numss.toString().substring(0, 12 + stratindex) : numss.toString();
                     break;
-               /* case R.id.btn_cleanone:
-                    sum = new BigDecimal(sum).divide(BigDecimal.valueOf(100), 12, BigDecimal.ROUND_UP).stripTrailingZeros()
-                            .toString();
-                    break;*/
+                case R.id.btn_cleanone: {
+                    if (sum.length() > 1) {
+                        sum = sum.substring(0, sum.length() - 1);
+                    } else {
+                        sum = "0";
+                    }
+                }
+                break;
             }
             print.setText(sum);
-            flag = 0;
-            sum = "0";
+        }
+    }
+
+    class Oct2others implements OnClickListener {
+        @Override
+        public void onClick(View v) {
+            String numstr=print.getText().toString();
+            switch (v.getId()) {
+                case R.id.binary:
+                    Integer integer = Integer.valueOf(numstr);
+                    sum = Integer.toBinaryString(integer);
+                    break;
+                case R.id.otc:
+                    Integer integer1 = Integer.valueOf(numstr);
+                    sum = Integer.toOctalString(integer1);
+                    break;
+                case R.id.oct:
+                    sum = Integer.valueOf(numstr).toString();
+                    break;
+                case R.id.hex:
+                    Integer integer2 = Integer.valueOf(numstr);
+                    sum = Integer.toHexString(integer2);
+                    break;
+            }
+            print.setText(sum);
         }
     }
 }

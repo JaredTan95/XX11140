@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * 调用BigDecimal实现方法计算.
  */
 public enum Counts {
-    ADD, SUB, MULTIPLY, DIVIDE, MARK, ROOT;
+    ADD, SUB, MULTIPLY, DIVIDE, MARK, ROOT,BINARY,SEXNARY,OCTAL,DECIMAL,HEX;
     public String Values(String num1, String num2) {
         BigDecimal number1 = new BigDecimal(num1);
         BigDecimal number2 = new BigDecimal(num2);
@@ -25,9 +25,7 @@ public enum Counts {
             case DIVIDE:
                 number = number1.divide(number2,20,BigDecimal.ROUND_UP);
                 break;
-
         }
         return number.stripTrailingZeros().toString();
-
     }
 }

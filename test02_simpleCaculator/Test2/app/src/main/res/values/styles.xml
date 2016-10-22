@@ -24,6 +24,17 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="BtnStyle_land">
+        <item name="android:layout_margin">0.2dp</item>
+        <item name="android:background" >@color/colorBtnBackground</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="BtnCalculateStyle">
         <item name="android:layout_margin">0.2dp</item>
         <item name="android:background" >@color/colorCalculate</item>
@@ -31,6 +42,18 @@
         <item name="android:textStyle">normal</item>
         <item name="android:layout_width">90dp</item>
         <item name="android:layout_height">93dp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="BtnCalculateStyle_land">
+        <item name="android:layout_margin">0.2dp</item>
+        <item name="android:background" >@color/colorCalculate</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">52dp</item>
         <item name="android:textColor">@color/colorWhite</item>
         <item name="android:textSize">40sp</item>
         <item name="android:gravity">center</item>
