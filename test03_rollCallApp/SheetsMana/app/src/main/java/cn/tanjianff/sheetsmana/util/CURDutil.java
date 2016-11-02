@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -34,8 +35,9 @@ public class CURDutil {
         db.beginTransaction();//开始事务
         try {
             for (stuSheet item : sheets) {
-                db.execSQL("INSERT INTO stuSheet VALUES (null,null,?,?,?)"
-                        , new Object[]{item.getStd_id(), item.getStd_name(), item.getStd_className()});
+                db.execSQL("INSERT INTO stuSheet VALUES (null,null,?,?,?,?,?,?,?,?)"
+                        , new Object[]{item.getStd_id(), item.getStd_name(), item.getStd_className()
+                                ,item.getCase1(),item.getCase2(),item.getCase3(),item.getCase4(),item.getCase5()});
             }
             db.setTransactionSuccessful();//设置事务成功完成
         } catch (Exception e) {
@@ -52,8 +54,22 @@ public class CURDutil {
         db.update("student", cv, "icon=?", new String[]{student.getIcon()});
     }
 
+    public void updateCase(){
+
+    }
+
+    public void updateComment(stuSheet student){
+        ContentValues cv = new ContentValues();
+        cv.put("case1",student.getCase1());
+        cv.put("case2",student.getCase2());
+        cv.put("case3",student.getCase3());
+        cv.put("case4",student.getCase4());
+        cv.put("case5",student.getCase5());
+        db.update("student", cv,"case1=?,case2=?,case3=?,case4=?,case5=?",new String[]{student.getCase1()
+                ,student.getCase2(),student.getCase3(),student.getCase4(),student.getCase5()});
+    }
     public List<stuSheet> query() {
-        ArrayList<stuSheet> stuSheets = new ArrayList<stuSheet>();
+        ArrayList<stuSheet> stuSheets = new ArrayList<>();
         Cursor c = queryTheCursor();
         while (c.moveToNext()) {
             stuSheet student = new stuSheet();
@@ -61,6 +77,11 @@ public class CURDutil {
             student.setStd_id(c.getString(c.getColumnIndex("std_id")));
             student.setStd_name(c.getString(c.getColumnIndex("std_name")));
             student.setStd_className(c.getString(c.getColumnIndex("std_className")));
+            student.setCase1(c.getString(c.getColumnIndex("case1")));
+            student.setCase2(c.getString(c.getColumnIndex("case2")));
+            student.setCase3(c.getString(c.getColumnIndex("case3")));
+            student.setCase4(c.getString(c.getColumnIndex("case4")));
+            student.setCase5(c.getString(c.getColumnIndex("case4")));
             stuSheets.add(student);
         }
         c.close();
@@ -70,6 +91,26 @@ public class CURDutil {
     public Cursor queryTheCursor() {
         Cursor c = db.rawQuery("SELECT * FROM stuSheet", null);
         return c;
+    }
+
+    public List<stuSheet> queryComment(String position){
+        ArrayList<stuSheet> stuSheets=new ArrayList<>();
+        Cursor c=db.rawQuery("SELECT * FROM stuSheet WHERE id=?",new String[]{position});
+        while (c.move(0)){
+            stuSheet student = new stuSheet();
+            student.setIcon(c.getString(c.getColumnIndex("icon")));
+            student.setStd_id(c.getString(c.getColumnIndex("std_id")));
+            student.setStd_name(c.getString(c.getColumnIndex("std_name")));
+            student.setStd_className(c.getString(c.getColumnIndex("std_className")));
+            student.setCase1(c.getString(c.getColumnIndex("case1")));
+            student.setCase2(c.getString(c.getColumnIndex("case2")));
+            student.setCase3(c.getString(c.getColumnIndex("case3")));
+            student.setCase4(c.getString(c.getColumnIndex("case4")));
+            student.setCase5(c.getString(c.getColumnIndex("case4")));
+            stuSheets.add(student);
+        }
+        c.close();
+        return stuSheets;
     }
 
     //释放数据库资源

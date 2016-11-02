@@ -20,13 +20,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import cn.tanjianff.simpleemailapp.util.CURDutil;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private letterList letterlistview;
 
     private ArrayList<String> letterlistData;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +67,9 @@ public class MainActivity extends AppCompatActivity
                     Intent intent=new Intent();
                     intent.setClass(MainActivity.this,ScrollingActivity.class);
                     MainActivity.this.startActivity(intent);
-                    Toast.makeText(MainActivity.this, letterlistData.get(position), Toast.LENGTH_SHORT).show();
+                    Snackbar.make(view,  "你点击了"+letterlistData.get(position), Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                    //Toast.makeText(MainActivity.this, letterlistData.get(position), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -109,7 +112,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     class letterListItemAdapter extends BaseAdapter {
-
         @Override
         public int getCount() {
             return letterlistData.size();

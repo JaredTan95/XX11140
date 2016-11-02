@@ -22,6 +22,8 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -35,7 +37,7 @@ import java.util.List;
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
- * A login screen that offers login via email/password.
+ * 添加邮箱账户
  */
 public class AddAccountActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
@@ -65,6 +67,10 @@ public class AddAccountActivity extends AppCompatActivity implements LoaderCallb
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);//隐藏标题栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);//隐藏状态栏
+
         setContentView(R.layout.activity_add_account);
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -304,6 +310,7 @@ public class AddAccountActivity extends AppCompatActivity implements LoaderCallb
 
             try {
                 // Simulate network access.
+                //在此处添加邮箱账号验证的逻辑
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 return false;

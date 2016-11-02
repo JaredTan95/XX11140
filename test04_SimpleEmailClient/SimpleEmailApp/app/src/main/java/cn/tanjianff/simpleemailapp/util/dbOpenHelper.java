@@ -1,4 +1,4 @@
-package cn.tanjianff.sheetsmana.util;
+package cn.tanjianff.simpleemailapp.util;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class dbOpenHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "SheetMana.db";
+    public static final String DATABASE_NAME = "eamilAccount.db";
 
     public dbOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context,DATABASE_NAME, null, 1);
@@ -24,16 +24,14 @@ public class dbOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //创建stuSheet表
-        db.execSQL("CREATE TABLE IF NOT EXISTS stuSheet"
-                +"(id INTEGER PRIMARY KEY AUTOINCREMENT,icon VARCHAR,std_id VARCHAR NOT NULL,"
-                + "std_name VARCHAR NOT NULL,std_className VARCHAR NOT NULL,"
-                + "case1 VARCHAR,case2 VARCHAR,case3 VARCHAR,case4 VARCHAR,case5 VARCHAR);");
+        //创建eamilAccount表
+        db.execSQL("CREATE TABLE IF NOT EXISTS eamilAccount"
+                +"(id INTEGER PRIMARY KEY AUTOINCREMENT,account VARCHAR NOT NULL,passwd VARCHAR NOT NULL);");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("ALTER TABLE stuSheet ADD COLUMN VARCHAR(12) NULL");
+        db.execSQL("ALTER TABLE eamilAccount ADD COLUMN VARCHAR(12) NULL");
     }
 
     @Override

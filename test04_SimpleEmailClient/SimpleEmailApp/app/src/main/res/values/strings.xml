@@ -2,7 +2,7 @@
     <string name="app_name">简易邮箱客户端 by tanjain.</string>
 
     <string name="navigation_drawer_open">打开菜单</string>
-    <string name="navigation_drawer_close">关闭菜单r</string>
+    <string name="navigation_drawer_close">关闭菜单</string>
 
     <string name="action_settings">设置</string>
     <string name="title_activity_add_account">添加账户</string>
@@ -99,4 +99,8 @@
         "For example, a floating action button (FAB) can disappear or move off screen before a "
         "user picks up a card, or it can move if a snackbar appears.\n""
     </string>
+
+    <string name="title_activity_initial">InitialActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

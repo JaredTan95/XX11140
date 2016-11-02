@@ -1,5 +1,6 @@
 package cn.tanjianff.sheetsmana;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,7 +13,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,18 +38,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 //TODO:添加导入数据的操作
-
+                Intent intent=new Intent();
+                intent.setClass(MainActivity.this,IOExcelActivity.class);
+                MainActivity.this.startActivity(intent);
                 Snackbar.make(view,"可以导入Excel表格", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
-
-        //测试创建数据库"SheetMana.db"
-       /* dbOpenHelper curdSqlite=new dbOpenHelper(getApplicationContext());
-        String state=curdSqlite.getWritableDatabase().toString();*/
-
-
-
 
  /*
 
@@ -85,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         listview.setAdapter(simpleAdapter);
         */
 
+        //testAddData();
         /*此处数据将从SQLite数据库中获取*/
         //查询数据库里的数据
         query();
@@ -115,16 +111,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(MainActivity.this,"你点击了第" + position + "项",Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent();
+        intent.setClass(MainActivity.this,itemDetailsActivity.class);
+        intent.putExtra("clickItemOrder",(position+1));
+        MainActivity.this.startActivity(intent);
+        Toast.makeText(MainActivity.this,"你点击了第" + (position+1) + "项",Toast.LENGTH_SHORT).show();
     }
 
     public void query() {
         List<stuSheet> students = curdUtil.query();
-        List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
+        List<Map<String, Object>> listItems = new ArrayList<>();
         int i=0;
         for (stuSheet std : students) {
-            Map<String,Object> showItems=new HashMap<String,Object>();
-            showItems.put("orderNum",i++);
+            Map<String,Object> showItems= new HashMap<>();
+            showItems.put("orderNum",++i);
             showItems.put("head_icon",std.getIcon());
             showItems.put("sid",std.getStd_id());
             showItems.put("list_items_names",std.getStd_name());
@@ -141,11 +141,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void testAddData(){
         ArrayList<stuSheet> students = new ArrayList<stuSheet>();
-        stuSheet std1 = new stuSheet("wpg", "631406010122", "Jenny", "计科一班");
-        stuSheet std2 = new stuSheet("sdd", "631406010122", "Jessica", "计科一班");
-        stuSheet std3 = new stuSheet("dsfs", "631406010122", "sexy girl", "计科一班");
-        stuSheet std4 = new stuSheet("dfswrt", "631406010122", "Kelly", "计科一班");
-        stuSheet std5 = new stuSheet("fhjtr", "631406010122", "Jane", "计科一班");
+        stuSheet std1 = new stuSheet("wpg", "631406010122", "Jenny", "计科一班","1","1"," "," "," ");
+        stuSheet std2 = new stuSheet("sdd", "631406010122", "Jessica", "计科一班","1","1"," "," "," ");
+        stuSheet std3 = new stuSheet("dsfs", "631406010122", "sexy girl", "计科一班","1","1","1"," "," ");
+        stuSheet std4 = new stuSheet("dfswrt", "631406010122", "Kelly", "计科一班","1","1"," "," "," ");
+        stuSheet std5 = new stuSheet("fhjtr", "631406010122", "Jane", "计科一班","1","1"," "," "," ");
         students.add(std1);
         students.add(std2);
         students.add(std3);
