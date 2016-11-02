@@ -1,0 +1,1222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>Your Message Subject or Title</title>
+	<style type="text/css">
+		/* removing Myriad Web from font-family inline means it shows up in Outlook 2010 but shows Lucida in Apple Mail! */ /* Myriad Web - from IST Newsletter */
+		@font-face {
+		  font-family: 'Myriad Web';
+		  src: local('Myriad Set Pro'), local('Myriad Set'), url('http://email.images.apple.com/rover/aos/moe/Fonts/myriad-set-pro_thin.ttf'); /* https://ixtapa.apple.com/nl-img/rsrc/fonts/MyriadSetProText.ttf */
+		  font-weight: 100; /* normal. 200, try 100 */
+		  @font-face { font-family: 'Myriad Medium'; src: local('Myriad Medium Pro'), local('Myriad Medium Set'), url('http://email.images.apple.com/rover/aos/moe/Fonts/myriad-set-pro_medium.ttf'); font-weight: 200; }		
+		}
+	</style>
+	
+	<style type="text/css">		
+		/* Reset */
+		body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; background-color:#ECECEC;} /*  ECECEC */
+		img {outline:none; text-decoration:none; } /* border:none; -ms-interpolation-mode:bicubic; ? */
+		
+		img[class=desktop-product-image] {outline:none; text-decoration:none; font-size:14px; color:#000000;}
+		
+		a img {border:none;}		p {margin:1em 0;}		br {line-height:10px;}
+		h1, h2, h3, h4, h5, h6 {color:#000000 !important; font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif !important;} /* hotmail fix / added font family also*/
+		a {color:#0085cf; text-decoration:none;} /* #0088cc */		a:link { color:#0085cf; text-decoration:none;}		a:visited { color:#0085cf; text-decoration:none;}		a:hover { color:#0085cf; text-decoration:underline;}
+		/* Client Specific - taken from Litmus template examples */
+		table td {border-collapse:collapse;}
+		#outlook a {padding:0;} 
+		.ExternalClass {width:100%;}  
+		.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, 
+		.ExternalClass div {line-height:100%;} 
+		.ExternalClass img[class^=Emoji] { width:10px !important; height:10px !important; display:inline !important; }
+		/* For h1 etc in Outlook - test - did not work in Outlook 2013 */
+		.ExternalClass h1, .ExternalClass h2, .ExternalClass h3, .ExternalClass h4, .ExternalClass h5, .ExternalClass h6 { font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif !important;}
+		.noWrapPrice {white-space:nowrap;  overflow:hidden;}
+/* --- General styles ------- */
+	table[class=content-table] { width:700px; }
+	table[class=header-general] { height:auto; overflow:auto;}
+
+/*------ Link colors -------- */
+/* these are not working in AOL, Yahoo etc - they have to be inline too. change to sizeTextmS instead of S */
+	.footer-menu-table a, .footer-menu-table a:link, .footer-menu-table a:hover, .footer-menu-table a:active, .footer-menu-table a:visited { text-decoration:none !important;	color:#aaaaaa !important;	font-size:11px !important; font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; }
+	.footer-menu-table a:hover { text-decoration:underline !important; }
+
+@media only screen and (min-width:50px) and (max-width:768px) {
+
+			
+	.moe-break-me { word-wrap:break-word; word-break:break-all; overflow-wrap:break-word; } /* to target long Emails in MOE */
+	table[class=img-outside-container] { width:100% !important; padding-top:10px !important; padding-bottom:30px !important; } /* for child line items image container //  padding-top:30px !important; padding-bottom:30px !important;*/
+
+	table[class=moe-img-container], td[class=moe-img-container] {display:block !important; } /* width:auto !important; height:auto !important; */
+		table[class=moe-img-container] { width:100% !important; padding-left:10% !important;  padding-right:10% !important; height:auto !important; } /* background:#CCCCCC; */
+		td[class=moe-img-container] { width:80% !important; height:auto !important; }
+
+	/* remove Desktop image in MOE */
+	img[class=desktop-product-image] { width:0px !important; height:0px !important; padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important; display:none !important; outline:none; text-decoration:none; font-size:0px !important; display:none !important; }
+	/* add Mobile image in MOE */
+	img[class=mobile-product-image] { display:block !important; max-width:640px !important; max-height: 350px !important; width:100% !important; height:auto !important; outline:none; text-decoration:none; font-size:14px; color:#000000; } /* remove padding-bottom:10px !important; */	
+
+	.MOE_postal { width:100% !important; }
+	.gift-msg { padding-top: 13px; }
+	.gift-txt { padding-left:0px !important; }
+
+	table[class=table-concierge] { padding-left:20px !important; padding-right:20px !important; }
+	table[class=table-concierge-divider] { width:100% !important; }
+
+/* gap for mobile only - if counter > 1 */
+	.order-number-gap { display:block !important; width:100% important!; height:20px !important; font-size:20px !important; line-height:20px !important; /* background-color:#f2af43; */ }
+	.product-divider-gap { display:block !important; height:15px !important; font-size:15px !important; line-height:15px !important; } /* 30px 9/17 background-color:#93c9a0;  */
+	.product-divider-gap2 { display:block !important; height:20px !important; font-size:20px !important; line-height:20px !important; /* background-color:#93c9a0; */ }	
+	.product-divider-line-moe { display:block !important; height:1px !important; font-size:1px !important; line-height:1px !important; background-color:#D6D6D6; color:#D6D6D6; /* D6D6D6  // red - ff0000*/ }
+	td[class=product-divider-line-moe], img[class=product-divider-line-moe] { width:100% !important; }
+/*	tr[class=product-divider-line-moe] { padding-left:20px !important; padding-right:20px !important; } */
+	table[class=product-divider-line-moe-table] { width:94% !important;}
+	table[class=product-divider-line-moe-table-full] { width:100% !important;}
+
+table[class=btn-contain] { width:100% !important; padding-bottom:18px !important; margin:auto !important; padding-right:0px !important;  } /* DC - padding-bottom:13px !important; */
+td[class=btn-contain] { width:100% important; } /* background-color:#EEEEEE;  */
+
+/* center the button how? */
+table[class=blue-button] { margin:0 auto !important; text-align:center !important;	-moz-box-shadow: none !important; -webkit-box-shadow: none !important; box-shadow: none !important; padding-top:8px !important; padding-bottom:8px !important; 
+	-webkit-border-radius:8px !important; -moz-border-radius:8px !important; border-radius:8px !important; border-top:0px !important; border-bottom:0px !important; border-left:0px !important; border-right:0px !important;
+	background: #0088cc !important; /* Old browsers */
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#329de1+0,1173c0+100 */
+background: -moz-linear-gradient(top,  #3caee7 0%, #0088cc 100%)  !important; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3caee7), color-stop(100%,#0088cc))  !important; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #3caee7 0%,#0088cc 100%)  !important; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #3caee7 0%,#0088cc 100%)  !important; /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #3caee7 0%,#0088cc 100%)  !important; /* IE10+ */
+background: linear-gradient(to bottom,  #3caee7 0%,#0088cc 100%)  !important; /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3caee7', endColorstr='#0088cc',GradientType=0 )  !important; /* IE6-9 */
+} /* 077fff dark blue .. http://www.colorzilla.com/gradient-editor/.. Digital Color Meter */
+
+td[class=btn-txt-contain] {	font-family:'Myriad Medium', 'Myriad Medium Pro', 'Myriad Medium Set', 'Helvetica', 'Helvetica Neue', sans-serif !important; font-size:15px !important; line-height:1em !important; padding-left:9px !important; padding-right:9px !important; padding-top:7px !important; padding-bottom:6px !important;  } /* pad left, right 16 - shows 12. make it 25px. pad left/right is 13px. pad top/bottom is 9px. */
+.blue-button-text {	font-family:'Myriad Medium', 'Myriad Medium Pro', 'Myriad Medium Set', 'Helvetica', 'Helvetica Neue', sans-serif !important; font-size:15px !important; line-height:1em !important; padding-left:0px !important; padding-right:0px !important; margin:0px !important; } /* pad top, bottom 16 - no effect  // padding-top:25px !important; padding-bottom:25px !important; */
+.postal-txt { font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important;  font-size:16px !important; line-height:22px !important; }
+
+td[class=additionalFAQ] {text-align:left !important;}
+
+.mobile-only-qty { display:inline !important; }
+.moe-padbot-15 { padding-bottom:15px !important; }
+.moe-no-pad { padding-left:0px !important; }
+.moe-show-big { display:inline !important; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; font-size:24px !important; line-height:24px !important; } /* used for : in Also shipping... */
+
+table[class=header-shipped-title], table[class=header-shipped-date], table[class=header-shipped-delivery], table[class=header-signature] { width:100% !important; padding-right:0px !important; padding-left:0px !important; }
+table[class=header-signature] { padding-top:5px !important; } /* DC - remove padding-top:20px !important; 5px + padding below button (18px) = 23px */
+
+/* 3A only - Virtual Biz card ------------------ */
+/* 37px  */
+.pad-moe-1 { height:13px !important; font-size:13px !important;  line-height:13px !important; }
+
+.vbiz-name { font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; font-size:18 !important;  line-height:1.5em !important; font-weight:normal !important; }
+.vbiz-position, .vbiz-session, .vbiz-email, .vbiz-phone { font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; font-size:12px !important; line-height:1.5em !important; } /* font-size:16px !important; line-height:2em !important;  */
+.vbiz-position { color:#a0a0a0 !important; }
+table[class=vbizcard-container] {
+	width:100% !important; text-align: center !important; margin: 0 auto; 
+ }
+table[class=vbizcard] {
+	width:100% !important; background-color:#f6f6f6 !important; background-image:none !important; /* f9f9f9 // border: 0px none !important; border-radius:0px !important; -moz-border-radius:0px !important;  */
+	border: 1px #EEEEEE solid !important; /* */ height: auto !important;
+ } 
+table[class=vbiz-shadow] { width: 100% !important; }
+
+td[class=vbizcard-pic] {
+	background:none !important; width:40% !important; /* 50% to 40% */
+	border-top-left-radius:0px !important; -moz-top-left-radius:0px !important; -moz-border-bottom-left-radius:0px !important; border-bottom-left-radius:0px !important;
+	padding-top:12px !important;
+}
+img.vbizcard-pic { width: 100% !important; height: auto !important;}
+td[class=vbizcard-details] {
+	width:58%; padding-right: 6px !important; /* 50% to 60% */
+	background: none !important; background-image: none !important; -moz-border-radius:0px !important; border-radius:0px !important;
+	padding-top:12px !important; padding-bottom:7px !important;
+}
+.vbiz-shadow, img[class=vbiz-shadow] { height:0 !important; width:0 !important; display:none !important; font-size:0px; line-height:0px;}
+
+/* 96% MOE only divider line // d9d9d9 - make it a top border - 96% */
+table[class=divider-moe-only] { border-top:0px !important; } /* D6D6D6 e42a1c red. make it 0 otherwise border becomes too thick */
+td[class=divider-moe-only] { border-top:1px solid #D6D6D6 !important; } /* D6D6D6 e42a1c red //1bd139 - green  */
+/* For Savings line below Product info row - Brazil etc */
+table[class=recycle-fee-row] { padding-top:13px !important; }
+td[class=recycle-fee] { padding-left:0px !important; }
+td[class=recycle-total-price] { padding-right:0px !important; }
+
+/* Order Details CSS (2 cases) */
+	table[class=order-details-line] { display:block !important; padding-left:0px !important; padding-right:0px !important; width:100% !important; padding-bottom:20px !important; padding-top:20px !important; left: 0px; text-align:left !important; height:auto !important; font-size:16px !important; line-height:22px !important; /* background-color:#EEEEEE; */ }  /* ISSUE - DC - line height - old 1.5 em // width:auto !important; */
+		td[class=order-details-line] { display:block !important; width:auto !important; padding-left:20px !important; padding-right:20px !important;     text-align:left !important; height:auto !important; font-size:16px !important; line-height:22px !important;} /* DC - line height - old 1.5 em */
+	table[class=order-details-line2] { display:block !important; padding-left:0 !important; padding-right:20px !important; padding-bottom:20px !important; padding-top:20px !important; left: 0px; text-align:left !important; height:auto !important; font-size:16px !important; line-height:22px !important; /* background-color:#9fd1f9; */ }	  /* DC - line height - old 1.5 em // width:auto !important;  */
+		td[class=order-details-line2] { display:block !important; width:100% !important; text-align:left !important; height:auto !important; font-size:16px !important; line-height:22px !important;} /* DC - line height - old 1.5 em */
+
+	img[class=order-details-arrow] { display:inline !important; width:5px !important; height:10px !important; }
+	.order-details-link { display:inline !important; color:#0088cc !important; }
+/*	.order-details-line { background-color:#EEEEEE; padding-bottom:20px !important; padding-top:20px !important; width:auto !important; display:block !important; left: 0px; text-align:left !important; height:auto !important; font-size:16px !important; line-height:1.5em !important;  } */
+	.aapl-link { color:#0088cc !important; }
+
+table[class=payment-top-divide] { padding-left:0px !important; padding-right:0px !important; } /* line above Payment section, changes to 100% from 96% in desktop */
+.pad-bottom-H1 { /* background-color:#9fd1f9; */  /* blue - 9fd1f9 */ }
+.gap-bot-greetings { /* background-color:#9fd1f9; */ }
+table[class=product-email] { padding-left:0px !important; padding-top:13px !important; /* background-color:#9fd1f9; */ } /* to have gap between EGC product line and sub-sections like Message */
+table[class=stretch-width-payment] { padding-bottom:30px; padding-top:30px !important; }
+td[class=info-section-row] { padding-bottom:0px !important; }
+.order-mobile-only, .sub-heading { font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; }
+.moe-30, td[class=divider-above-payment], img[class=divider-above-payment] { height:30px !important; line-height:30px !important; font-size:30px !important; /* background-color:#6bc6ff !important; */}
+.moe-20 { height:20px !important; line-height:20px !important; font-size:20px !important; }
+
+/* spacer above Shipment 2 - not being used */
+.spacer-shipment, img[class=spacer-shipment] { height:30px !important; line-height:30px !important; font-size:30px !important; /* background-color:#6bc6ff !important; */ }
+.moe-hide, td[class=header-shipment-details-dskOnly], td[class=line-divider] ,span[class=header-shipment-details-dskOnly]{ width:0px !important; height:0px !important; margin:0 !important; padding:0 !important; font-size:0px !important; line-height:0px !important; display:none !important; font-weight:none !important; letter-spacing:0px !important; }
+span[class=header-shipment-mobile-only] { 
+			display: inline !important;
+			font-size:15px !important; line-height: 18px !important; 
+			padding:0; margin:0; 
+			width:auto !important; height:auto !important;
+		}
+
+
+/* Font size CHANGES in Flagship Mobile ============================================================== */
+	.sectionHeading, .ShipmentHeading, .ShipmentHeading-mobile { font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; font-size:24px !important; line-height:28px !important; font-weight:normal !important; letter-spacing:0px !important;} /* DC - add letter-spacing 0 here. lh 1.5em - change to 56pt/28px (Agemail) */
+	td[class=header-shipment-title], td[class=sec-side-heading], .order-total { font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; font-size:16px !important; line-height:1em !important;  } /* added line height 1.5. make it 1.15? */	
+	
+	.gift-txt, .gen-txt-softbank, .product-quantity-2, .gen-txt-black, .wms-txt, .gen-heading, .ipod-engraving, .gen-txt, .gen-txt-gray, .q-txt, .product-price, .product-quantity, .mobile-only-qty, .product-total-price, td[class=td-half], .personalsetup-textsection, 
+	.td-half, td[class=sec-side-details], td[class=sec-side-details-1], td[class=sec-side-details-2], td[class=product-description-cto],
+	td[class=recycle-fee], td[class=recycle-total-price], td[class=header-shipment-details], .order-total, td[class=header-shipment-ship-link] { 
+		font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; font-size:16px !important; line-height:22px !important; letter-spacing:0px !important; } /* DC - body text change */
+		
+	.postal-txt, .gen-txt-gray, td[class=product-quantity-2], td[class=product-quantity], td[class=product-total-price], td[class=sec-side-details], td[class=sec-side-details-1], td[class=header-shipment-details] { 
+		color:#333333 !important; } /* for FAQ body, iPhone Questions, details sections, cto, quantity, price as per comp - should be dark gray */
+	.gen-txt-black { color:#000000 !important; }
+	
+	.wms-txt { padding-top:0px; padding-left:20px !important; padding-bottom:30px !important; } /* padding-top:20px; To see all the items in this order, visit online Order Status . padding-bottom:20px */
+	.gen-txt-softbank { padding-left:0px !important; }	
+	.gen-heading { padding-bottom:13px !important;}	
+	
+	.just-font { font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; }
+	.ipod-engraving { padding-left:0px !important;}	
+	
+	table[class=secHeader-container] { padding-top:30px !important; /* background-color:#f9e361; */ }	
+	/* for footer-txt - make it larger in Mobile */	
+	.footer-txt, .footer-copyright-space { font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; font-size:9px !important; line-height:1.5em !important; color:#999999 !important; }	/* sL - 13. change to sS 9 */		
+	.gap-bot-greetings { width:100% !important; }		
+
+	td[class=sec-side-heading] { font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; padding-top:30px !important; padding-bottom:13px !important; line-height:1em !important; /* background-color:#b0b7f2; */}
+/* divider under H1 like Payment */
+	/* SPACER with 20 px gap in Mobile - use variable  */
+/*	.pad-bottom-H1 { height:30px !important; font-size:30px !important; line-height:30px !important; background-color:#b0d7fc !important; } */
+
+/* remove padding from below all H1 - why? */
+	.pad-bottom-H1 { height:30px !important; font-size:30px !important; line-height:30px !important; padding:0px !important; } /* to change bottom padding to 20px for SectionTitle in mobile */
+
+/*	.pad-bottom-H1 { height:0px !important; font-size:0px !important; line-height:0px !important; display:none !important; margin:0px !important; padding:0px !important; } *//* to change bottom padding to 20px for SectionTitle in mobile */
+	td[class=pad-bottom-H1-nokeep], td[class=divider-col-line], img[class=divider-col-line], td[class=pad-bottom-H1-2], img[class=pad-bottom-H1-2] { height:0px !important; font-size:0px !important; line-height:0px !important; background-color:none !important; background:none !important; display:none !important; margin:0px !important; padding:0px !important; }
+	/* used only under Personal Setup heading b/c it has an image */
+	.pad-bottom-H1-keep { height:30px !important; font-size:30px !important; line-height:30px !important; /* background-color:#b0d7fc !important; */ }	
+	
+	/* gap above divider above sub-line item in MOE only */
+	.pad-sub-item { display:block !important; height:30px !important; font-size:30px !important; line-height:30px !important; /* background-color:#b0d7fc !important;  */ }	
+
+	/* for Questions */
+	.q-txt { padding-top:25px !important; margin-bottom:13px !important; color:#000000 !important; /* background-color:#b7ffc9; */ } /* DC - padding-top:30px !important; - 25px */
+	table[class=personalsetup-textsection] {  padding-bottom:30px !important; /* background-color:#93c9a0; */ }
+	
+		
+	/* amt-divider-gap (line above Order Total) */
+	.amt-divider-gap { height:13px !important; font-size:13px !important; line-height:13px !important; /* background-color:#93c9a0; */ }
+	
+	/* mobile version of image appears */
+	tr[class=personalsetup-mobile-pic] { padding-left:20px !important; padding-right:20px !important; padding-top:30px !important; padding-bottom:30px !important;  width:auto !important; height:auto !important; display:block !important; /* background-color:#fcd6ff !important; */ } /* padding-top:10px !important; padding-bottom:10px !important;  */
+	td[class=personalsetup-mobile-pic] { padding-left:20px !important; padding-right:20px !important; width:auto !important; height:auto !important; display:inline !important; } 
+	img[class=personalsetup-mobile-pic] {	width:100% !important; height:auto !important;  display:block !important; }
+	
+	td[class=section-product-header] { padding-top:0 !important; padding-bottom:0 !important; }		
+	
+	table[class=velocity-gap], td[class=velocity-gap], img[class=velocity-gap] { height:30px !important; font-size:30px !important; line-height:30px !important; /* background-color:#93c9a0; */  display:block !important; }
+	
+/* removed table[class=product-info-table],  table[class=product-price-row]  */
+	table[class=product-row] { width:100% !important; } /* contains 2 tds, image and rest of product description */
+	table[class=cto-product-row] { /* background-color:#ffda49; */ width: 100% !important; padding-top:0px !important; padding-bottom:15px !important; } /* padding-top:20px !important; padding-bottom:20px !important;  back to 15 b/c dividers have 15px */
+
+	.ap-8pxspacer, .ap-9pxspacer, .ap-10pxspacer, .ap-19pxspacer, .ap-13pxspacer, .ap-15pxspacer, .ap-25pxspacer, .ap-data-divide
+	{ width:0 !important; height:0 !important; font-size:0 !important; line-height:0 !important; display:none !important; }/*  background-color:#666666 !important;  */
+	
+/* /end of Font sizes in Flagship Mobile ================================ */
+
+	body { -webkit-text-size-adjust:120% !important; line-height:120% !important; background-image:none !important; background-color:#FFFFFF !important;  /* flat background color in Mobile */}
+	table[class=overall-page-container], td[class=background-noise] { background-image:none !important;  background-color:#FFFFFF !important; /* flat background color in Mobile */ }	
+/* used for cto config */
+	.desktop-only { width:0px !important; height:0px !important; padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important; display:none !important; font-size:0px !important; line-height:0px !important; font-weight:none !important;}			
+/* GREETINGS - Sub heading and heading spacing --------------- */
+	td[class=greetings-section] { align: left !important; } /* left aligned in mobile */
+	.heading-email { font-family:'Myriad Pro', 'Myriad Web', 'Myriad Set Pro', 'Myriad Set', 'Helvetica', 'Helvetica Neue', sans-serif !important; font-weight:100 !important; text-align:left !important; line-height:37px !important; font-size:35px !important;} /* DC - change font-weight, font-size, line-height */
+	.sub-heading { color:#000000 !important; text-align: left !important; padding-top:15px !important; font-size:16px !important; line-height:22px !important; font-weight:normal !important; } /* DC - change font-weight, font-size, line-height */
+	
+/* ------- table-left-pad change width to 20px in mobile - so it is aligned to titles ------ */
+	td[class=table-left-pad] { width:20px !important; }
+/* ------ PERSONAL SETUP ------------- */
+/* mobile version of divider */
+	td[class=divider-desktop-only] { background:#FFFFFF !important; }	
+/* desktop version of image disappears */
+	table[class=personalsetup-desktop-pic],  tr[class=personalsetup-desktop-pic], td[class=personalsetup-desktop-pic],  img[class=personalsetup-desktop-pic] {	width:0 !important; height:0 !important; font-size:0; line-height:0; display:none !important; }
+/* text section stretches 100% */
+	table[class=personalsetup-textsection] { width:100% !important; padding-left:20px !important; padding-right:20px !important; padding-top:10px !important; }
+/* Product Promo Tiles (3 to 1 product slides) --------- */
+	h1 {-webkit-text-size-adjust:100% !important; line-height:110% !important;}
+/* fix unwanted styling for iPhone on date, tel and address */
+	a, a:link,  a:visited,  a:active  {color:#000000; text-decoration:none;} 
+/* links will specifically get this class */
+	.aapl-link a,  .aapl-link a:link,  .aapl-link a:visited,  .aapl-link a:active, 
+	.bluelink a,  .bluelink a:link,  .bluelink a:visited,  .bluelink a:active, 
+	.footer-txt a,  .footer-txt a:link,  .footer-txt a:visited,  .footer-txt a:active  
+		{color:#0085cf; text-decoration:none;} /* #0088cc */
+	table[class=all-table] { background-color:#f2f2f2 !important; /* ECECEC */ background-image:none !important; }
+/* AP-WRAPPER - affects overall width of content-section */
+	.ap-wrapper { width:100% !important; /* affects overall width of content-section */ margin:0px auto !important; /* NOT centering - 0px 0px overrides above code */}
+	table[class=stretch-width], table[class=stretch-width-payment] { width:100% important; }
+	td[class=email-heading] { font-weight:thin !important; /* no effect on font thickness */ }		
+/* ---------- Shipment header section - merge sections --------- */
+	table[class=header-shipment-title], td[class=header-shipment-title] { width:100% !important; line-height:1em !important; } /* 30px */
+	table[class=header-shipment-details], td[class=header-shipment-details] { width:100% !important; padding-top:0px !important; padding-bottom:0px !important; } /* to make it stack - padding-top:13px !important; */
+	table[class=header-shipment-details] { padding-left:0px !important; padding-right:0px !important; } /* separately added otherwise double pad20 for table, td */	
+	td[class=header-shipment-title] { padding-top:0px !important; padding-bottom:13px !important; /* background-color:#94db76; */ }
+/* product-price-row contains price, quantity, final price fields as tds */
+	td[class=name-container] { width:60% !important; padding-left:0 !important; padding-right:0 !important; } /* 72% / 69% / 65% ?*/
+	td[class=qty-container] { width:39% !important; padding-left:0 !important; padding-right:0 !important; white-space:nowrap; } 
+/* product-info-table is 100% b/c it is under Image - not 72%. quantity-2 is when price is also viewable */
+	td[class=product-quantity-2] { width:50% !important; text-align:left !important; line-height:1em !important; }
+	table[class=product-info-table], table[class=product-price-row], table[class=product-price-row-2] { width:100% !important; padding-left:0 !important; padding-right:0 !important; padding-bottom:0 !important; } /* before was 100% - causing extra space // table[class=product-quantity]*/
+	td[class=product-quantity] { width:100% !important; text-align:right !important; line-height:1em !important; } /* removed padding-bottom:8px; padding-top:8px; / background:#EEEEEE; */	
+	table[class=product-name] { width:100% !important; padding-left:0 !important; padding-right:0 !important; padding-top:0 !important; padding-bottom:13px !important; margin-bottom:0px !important;  } 
+	td[class=product-name] { font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; font-size:16px !important; line-height:22px !important; margin-bottom:0px !important; /* background-color:#a5ff7f; */ } /* inline, it was sizeBodyDsk. added line height 1.5, make it 1.15em */
+	td[class=product-price],  table[class=recycle-price],  table[class=recycle-quantity] { width:0; font-size:0; line-height:0; display:none; }
+
+/* make 'Qty' appear only in Mobile */
+	span[class=mobile-only-qty] { 	display:inline !important; font-size:16px !important; line-height:1em !important; padding:0; margin:0; width:auto !important; height:auto !important;}
+	td[class=product-total-price] { width:46%; /* 50% */ text-align:right; font-weight:normal !important; line-height:1em !important; } /* removed padding-top:8px; padding-bottom:8px; padding-right:20px;   */
+	table[class=recycle-fee-row] { width:100%; padding-top:8px; }
+	td[class=recycle-fee] { width:46%; text-align:left; padding-right:8px; font-weight: normal !important; }
+	td[class=recycle-total-price] { width:46%; text-align:right; padding-right:20px; font-weight: normal !important; }		
+/* ------- For Product CTO individual line tables --- */	
+	table[class=product-description-cto],  td[class=product-description-cto] { color:#333333 !important; width:100%; border-bottom:0px; padding-bottom:3px; }
+/* ---------------- Footer - copyright links, lines--------------------- */
+	span.mobile-only-element { display:block !important; width:100% !important;}
+	
+	table[class=footer-copyright-line],	 table[class=footer-copyright-links] { width:100% !important; /* padding-left:20px; - don't need as I added pad left, right 20 in containing table */}
+	table[class=footer-copyright-line] { padding-bottom:10px !important; /* spacing between this row and next row */ }
+/* remove in mobile view, make it a td instead of a table */
+	td[class=footer-copyright-space],  span.footer-copyright-space { width:0 !important; height:0 !important; display:none !important; line-height:0 !important; font-size:0 !important; }	
+/* Product Promo (3 to 1 product slides) --------- */
+/* centering if contained in tr of containing table, not if it is a separate table itself */
+	table[class=product-promo-mobile],  tr[class=product-promo-mobile],  td[class=product-promo-mobile] { height:auto !important; width:100% !important; padding-top:0px !important; padding-bottom:0px !important; text-align:center; display:block !important; mso-hide:none !important; background:#FFFFFF !important; /* works if display is block */}
+	table[class=product-promo-mobile] { border-top:0px !important; border-bottom:1px #D6D6D6 solid !important; }
+	td[class=product-promo-mobile] { text-align:center !important; padding-top:30px !important;  padding-bottom:30px !important; }
+	img[class=product-promo-mobile-img] { width:90% !important; height: auto !important;}	
+	table[class=product-promo-desktop],  tr[class=product-promo-desktop],  td[class=product-promo-desktop] { height:0 !important; width:0 !important; line-height:0 !important; padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important; display:none !important;}
+	.product-promo-desktop img { width:0px !important; height:0px !important; padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important; display:none !important; }		
+/* ------- Order + Date banner (Mobile only)  */ table[class=order-mobile-only] { display: block !important; width:100% !important; height:auto !important; background:#FFFFFF; padding-top:30px !important; padding-bottom:30px !important; border-bottom:1px #D6D6D6 solid; border-top:0px; line-height:1.3em !important;  } 
+	tr[class=order-mobile-only], td[class=order-mobile-only] { height:auto !important; font-size:16px !important;  line-height:1.0em !important; padding-bottom:0px !important; padding-top:0px !important; padding-left:20px !important; padding-right:20px !important;}
+	.order-mobile-text, .order-mobile-link { line-height:22px !important; font-size:16px !important; display:block !important; width:100% !important; height:auto !important;}
+/* used for Order Number Mobile only */ 
+	.ShipmentHeading-mobile { display: block !important; color:#000000 !important; margin-top:0; margin-left:0; margin-right:0; margin-bottom:0; padding-bottom:30px !important; height:auto !important; line-height:1em !important; } 
+/* ----------- For Section Headers + Content areas ------------ */
+	/* eg. Items to be Shipped */
+	table[class=section-product-header] { background:none !important; -webkit-border-radius:0px !important;-moz-border-radius:0px !important; border-radius:0px !important;  border-top:0px !important; border-right:0px !important; border-left:0px !important;  -moz-box-shadow:none !important; -webkit-box-shadow:none !important; box-shadow:none !important;  width:100% !important; }
+
+	/* 10 is too much. add 7px? padding-left:0px !important; padding-right:0px !important; padding-top:0px !important; padding-bottom:0px !important; margin-bottom:0px !important; margin-top:0px !important; margin-left:0px !important; margin-right:0px !important; */
+	table[class=section-product-content], table[class=section-product-content-egc] { padding-left:7px !important; padding-right:7px !important; padding-top:0px !important; padding-bottom:0px !important; margin:0px !important; /* background-color:#ccb1ce !important; */ } /* pink - make it padding-bottom:20px !important; */
+ 	table[class=section-product-content] { width:100% !important; -webkit-border-radius:0px !important; -moz-border-radius:0px !important; border-radius:0px !important;  border-right:0px !important; border-left:0px !important; -moz-box-shadow:none !important; -webkit-box-shadow:none !important; box-shadow:none !important;  border-top-right-radius:0px !important; border-top-left-radius:0px !important; -moz-border-radius-topright:0px !important; -moz-border-radius-topleft:0px !important; -webkit-border-top-right-radius:0px !important; -webkit-border-top-left-radius:0px !important;  
+ 		border-bottom:0px !important; border-top:0px !important; /* border-bottom:1px #CCCCCC solid !important; */ }
+ 	table[class=section-product-content-egc] { width:100% !important; -webkit-border-radius:0px !important; -moz-border-radius:0px !important; border-radius:0px !important;  border-right:0px !important; border-left:0px !important; border-bottom:0px !important;  -moz-box-shadow:none !important; -webkit-box-shadow:none !important; box-shadow:none !important;  border-top-right-radius:0px !important; border-top-left-radius:0px !important; -moz-border-radius-topright:0px !important; -moz-border-radius-topleft:0px !important; -webkit-border-top-right-radius:0px !important; -webkit-border-top-left-radius:0px !important;  }				
+/* -------------- For Section headers and details (left/right in desktop) (top, bottom, tabbed in mobile) -------------- */
+	 table[class=amt-divider] { width:100% !important; background:#D6D6D6; }
+	 table[class=sec-side-heading],  table[class=sec-side-details], table[class=sec-side-details-1],  table[class=sec-side-details-2] { width:100% !important; }
+	/* eg. Billing Contact etc - won't need pad left if adding td of 30px */
+	 td[class=sec-side-heading] { 	padding-left:0px !important;} 
+	 td[class=sec-side-details],  td[class=sec-side-details-1],  td[class=sec-side-details-2] { 
+	 	padding-left:0 !important; padding-right:20px !important; padding-bottom:0 !important; /* background:#cccccc !important; */
+/* 	 remove it since emails come as part of payload - word-wrap:break-word; word-break:break-all; overflow-wrap:break-word; to handle long emails in MOE - to avoid breaking the layout */
+	 }	 /* 30 to 0 - there is already a side margin td */	
+/* ------- Payment / Tax etc --------- */		
+	/* for 3 properties below, no real change. 35/27+3/30+5 */
+	 table[class=sec-pay-amt-extrainfo] { width:100% !important; } /* b/c it will contain tax info in some cases */
+	 table[class=sec-pay-amts] { width:100% !important; } /* combines payment description + price */
+	 td[class=sec-pay-amt-names] { width:37% !important;}
+	 td[class=sec-pay-amt-amt] { width:30% !important; }
+	 span.txt-tax { font-size:13px !important; }
+	 .txt-hours { line-height:18px !important; }	
+	 td[class=divider-mobile-only] { background:#D6D6D6 !important; } /* only bgd color changes */
+/* ----- For Header section + Thank you msg section (REMOVES section in Mobile view)------ */
+/* change from curved WHITE box to flat */
+	table[id=table-main] { -webkit-border-radius:0px !important; -moz-border-radius:0px !important; border-radius:0px !important; border-top:0px !important; border-right:0px !important; border-left:0px !important; border-bottom:1px #D6D6D6 solid !important;  /* add border line as per comp */ -moz-box-shadow:none !important; -webkit-box-shadow:none !important; box-shadow:none !important;	}	
+	table[class=content-table] { width:100% !important; /* make it fluid */ margin:0px !important; }		
+/* ==== Header-mobile (add back height, width) =================== */
+	table[class=header-mobile],  tr[class=header-mobile]  { width:100% !important; height:auto !important; /* 49px */ text-align:left; display:block !important;	}	
+/* for small Apple logo - actual size - 201 x 50 - then size would be 100 x 25. suggested 202 x 42 or 101 x 21 */
+	img[class=header-logo-mobile] {height:27px !important; width:22px !important; margin-right:10px !important;display:block !important; } /* w 25, h 100. now w 25, h 65. if w is 30, then h is 78 // 55/2 = 28h x w (25/65 = 27/x) (x = 1755/25 = 70.2)....ICON - 40w x 50h. use 27h x (40/50 = x/27 // x = 21.6w)  */
+	/* MOBILE LOGO - padding top - 20, padding bottom 30. currently top 15, bot 15. since 25px has 25 padding on top, then bottom here should be just 5px so total is 30px */
+	td[class=header-logo-mobile] {padding-top:20px !important; padding-bottom:5px !important; padding-left:20px !important;height:27px !important; width:22px !important; }
+/* ==== end of Header-mobile (add back height, width) ==== */
+/* ===== section-divider ================================= */
+	 table[class=section-divider],  tr[class=section-divider],  td[class=section-divider] { width:100% !important; /* 656px */ height:10px !important; }
+/* ==== divider-mobile (add back height, width) ==== */	
+	 table[class=divider-header-mobile],  tr[class=divider-header-mobile],  td[class=divider-header-mobile] { width:100% !important; height:16px !important; } /* 16 instead of 1 (total gap is 14 + 16 = 30 */
+	table[class=divider-header-mobile-line],  tr[class=divider-header-mobile-line] { width:100% !important; /* 656px */ height:1px !important;	} 
+
+	 td[class=divider-header-mobile-line] {		width:100% !important;		height:1px !important;		background:#D6D6D6 !important;}
+	 img[class=divider-header-mobile-line] { width:1px !important; height:1px !important; 	display:block !important;}
+/* === divider-big + header-general [make INVISIBLE in Mobile version]==== */
+	 table[class=divider-big],  tr[class=divider-big],  td[class=divider-big],  img[class=divider-big], table[class=header-general],  tr[class=header-general],  td[class=header-general],  img[class=header-general] 
+	{ width:0 !important; height:0 !important; overflow:hidden !important;	line-height:0px !important; font-size:0px !important; margin:0 !important; padding:0 !important;}
+/* -------------- Questions section (and other containers) ---------------------- */		
+/* make questions table sections stack up - make the 2 columns tables and then make their width 100% */
+/* Questions, iPhone questions, Personal Setup tables (that contains 2 col tables), ATT agreement table - change from curved, shadowed table to a flat, plain table */
+	table[id=iphonequestionstable], table[id=agreementtable], table[id=personalsetuptable], table[id=promoBannerTable], table[id=freeshippingtable], table[id=softBanktable] { border-bottom:1px solid #D6D6D6 !important; border-top:0px !important; width:100% !important; -webkit-border-radius:0px !important; -moz-border-radius:0px !important; border-radius:0px !important; border-right:0px solid #cecece !important; border-left:0px solid #cecece !important; -moz-box-shadow:none !important; -webkit-box-shadow:none !important; box-shadow:none !important; }
+	table[class=softBankcontainer] { width:100% !important; }
+	table[id=questionstable] { border-bottom:0px !important; border-top:0px !important; width:100% !important; -webkit-border-radius:0px !important; -moz-border-radius:0px !important; border-radius:0px !important; border-right:0px solid #cecece !important; border-left:0px solid #cecece !important; -moz-box-shadow:none !important; -webkit-box-shadow:none !important; box-shadow:none !important; }
+     table[class=table-half],  table[class=table-half-1],  table[class=table-half-2] {   width:100% !important; /* padding-left:2%; padding-right:2%; */ }
+	 table[class=table-half-1],  table[class=table-half-2] {	padding-left:20px !important; padding-right:20px !important;}
+	 table[class=table-half-1],  td[class=td-half] { padding-bottom:0px !important; /* remove extra spacing once the tables are stacked */}
+	 table[class=table-half-2] {	padding-bottom:20px !important;}
+	 table[id=jpPrintTable]{ padding-left:6px !important; padding-right:6px !important; width:100% !important; border-top:1px solid #D6D6D6 !important; border-bottom:0px !important; -webkit-border-radius:0px !important; -moz-border-radius:0px !important; border-radius:0px !important; border-right:0px solid #cecece !important; border-left:0px solid #cecece !important; -moz-box-shadow:none !important; -webkit-box-shadow:none !important; box-shadow:none !important;font-size: 16px !important;padding-top:20px !important;}
+	
+/* -------------- For Footer-menu section (desktop-only) ---------------- */	
+/* make footer-menu-table disappear in Mobile version */
+	 table[class=footer-menu-table],  tr[class=footer-menu-table],  td[class=footer-menu-table],  .footer-menu-table-links { width:0 !important; height:0 !important;	overflow:hidden !important;	mso-hide:none; display:none !important;	line-height:0px !important; font-size:0px !important;	margin:0 !important; padding:0 !important;	border:0 !important; -webkit-border-radius:0px !important;-moz-border-radius:0px !important; border-radius:0px !important;		box-shadow:none !important; -webkit-box-shadow:none !important; -moz-box-shadow:none !important;}
+/* --------------- For Footer-menu section (mobile-only) ---------------- */	
+/* font-size:10px (change to sL (13)); line-height:1.3em; color:#979797; using mS (11), try sS (9)?? */
+	tr[class=footer-menu-table-mobile], td[class=footer-menu-table-mobile] { font-size:11px !important; line-height:1.3em !important; color:#979797 !important; width:100% !important; height:auto !important; mso-hide:none !important; text-align:center !important; }	
+/* pad left, right from 20px to 14px to allow footer menu to fit in 1 line */
+	table[class=footer-menu-table-mobile] { mso-hide:none !important; padding-left:14px !important; padding-right:14px !important; padding-top:10px !important; padding-bottom:10px !important; font-size:11px !important; line-height:1.3em !important; color:#979797 !important; height:auto !important; /* background:#EEEEEE;	*/  } /* TEST added for padding left, right */
+	table[class=footer-menu-table-mobile-line],  tr[class=footer-menu-table-mobile-line], td[class=footer-menu-table-mobile-line] { width:100% !important; height:1px !important; mso-hide:none !important; text-align:center !important; background:#FFFFFF; font-size:1px !important; line-height:1px !important; background:#D6D6D6 !important; }	
+/* font size does not change anything */
+	span[class=footer-menu-table-mobile] { display: block !important; font-size:11px !important; line-height:1.5em !important; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; color:#979797 !important;}
+	td[class=footer-menu-table-mobile] { padding-top:15px !important; padding-bottom:15px !important; }	
+	tr[class=footer-menu-table-mobile], tr[class=footer-menu-table-mobile-line] { width:100% !important; color:#979797 !important; }	
+	img[class=footer-menu-table-mobile-line] { display:block !important; font-size:1px !important; line-height:1px !important; height:1px  !important; width:100px !important; }
+/* the 4 links - has FONT SIZE // sL (13), instead of S (10), try mS (11) - stays in 1 line in MOE */
+	.footer-menu-table-mobile a, .footer-menu-table-mobile a:link,  .footer-menu-table-mobile a:hover,  .footer-menu-table-mobile a:active,  .footer-menu-table-mobile a:visited {text-decoration:none !important; font-size:11px !important; line-height:1.5em !important; font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif !important; color:#979797 !important; } /*10px, 12px *//*  color:#0085cf !important; old link color - #4fbef2 */ 
+}
+/* --------end of MQ 768px---------------------------------------------------------- */		
+			
+/* iPad Targeting */
+@media only screen and (device-width:768px) {			
+	a, a:link, a:visited, a:active  {color:#000000 !important; text-decoration:none !important;} /* fix unwanted styling on date, tel and address */	
+	/* links will specifically get this class - repeat */
+	.bluelink a,  .bluelink a:link,  .bluelink a:visited,  .bluelink a:active {color:#0085cf !important; text-decoration:none !important;} /* #0088cc */
+}	
+/* Android Targeting */
+@media only screen and (-webkit-device-pixel-ratio:.75){/* low density (ldpi) layouts */}
+@media only screen and (-webkit-device-pixel-ratio:1){/* medium density (mdpi) layouts */}
+@media only screen and (-webkit-device-pixel-ratio:1.5){/* high density (hdpi) layouts */}	
+				
+</style>
+		
+</head>	
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+																																																																	        	
+
+
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="margin:0px; min-width:100%; padding:0px;">
+	<table class="overall-page-container" width="100%" align="center" cellpadding="0" cellspacing="0" border="0" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" 
+	background="http://email.images.apple.com/dm/groups/aos/om/global/cmon/bg-noise.gif" bgcolor="f2f2f2" 
+	style="margin:0 auto;"> 
+		<tr>
+			<td align="center" width="100%" cellpadding="0" cellspacing="0" border="0" >
+				<center>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%" style="margin:0; padding:0; width:100% !important; line-height:100% !important;">
+   						<tr>
+   							<td width="100%" align="center" class="background-noise" valign="top" background="http://email.images.apple.com/dm/groups/aos/om/global/cmon/bg-noise.gif" bgcolor="F2F2F2">
+								<table class="ap-wrapper" width="706" border="0" cellpadding="0" cellspacing="0">
+									<tr>
+										<td valign="top" align="left">
+											<div style="display:none; white-space:nowrap; font:15px courier; line-height:0;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>			
+					<table align="center" class="header-general" width="690">													<tr class="header-general">
+														<td class="header-general" valign="top" align="left" height="40" width="155">
+															<img align="left" class="header-general" src="http://email.images.apple.com/rover/aos/global/hd/apple-store_2x.png" height="49" width="155" alt="Apple store" style="outline:none;" border="0">
+														</td>
+								<td align="right" class="header-general"  width="535" valign="bottom" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#666666 !important; font-size:11px; line-height:15px; text-align:right; padding-bottom:10px;">
+															订单号: <a style="color:#0085cf;"><span style="color:#0085cf;">	<a href="http://store.apple.com/go/cn/vieworder/W563269968/tanjian20150101@163.com" style="color:#0085cf !important;font-weight:normal" class="bluelink">W563269968</a>
+    </span></a> &nbsp;|&nbsp; 订单日期 2016/07/22
+														</td>							
+													</tr>
+												</table>
+						<table class="header-mobile" cellpadding="0" cellspacing="0" border="0" align="left" width="100%" style="mso-hide:all; display:none;" >
+													<tr class="header-mobile" style="line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+														<td class="header-logo-mobile" valign="top" align="left" style="line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+															<img class="header-logo-mobile" src="http://email.images.apple.com/rover/aos/moe/apple_icon.png" alt="" style="outline:none; display:block;" border="0" height="0" width="0">									
+														</td>
+													</tr>
+												</table>
+	<table class="ap-container" id="table-main" bgcolor="FFFFFF" cellspacing="0" cellpadding="0" border="0" width="100%" style="padding:0px; -webkit-border-radius:7px;-moz-border-radius:7px; border-radius:7px; border-top:1px solid #e1e1e1; border-right:1px solid #cecece; border-left:1px solid #cecece; border-bottom:1px solid #b4b4b4; -moz-box-shadow:0px 1px 1px #b4b4b4; -webkit-box-shadow:0px 1px 1px #b4b4b4; box-shadow:0px 1px 1px #b4b4b4;">
+		<tr>
+			<td>
+			
+													<!--[if mso]>
+														<table cellspacing="5" cellpadding="10" border="0" width="100%">
+															<tr><td>
+															</td></tr>
+														</table>	
+													<![endif]-->
+													
+												<table cellspacing="0" cellpadding="0" border="0" width="100%">
+														<tr>
+															<td width="100%" class="greetings-section" valign="bottom" align="center" style="padding-left:20px; padding-right:20px;">
+																																	<div class="heading-email" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#000000 !important; line-height:1.4em; font-size:34px; font-weight:400; padding-top:25px; margin-top:0; margin-left:0; margin-right:0; margin-bottom:0;">
+																																			您的货品正在运送途中。
+																																		</div>
+																																			
+						<div class="sub-heading" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; 
+		   	      	line-height:24px; font-size:19px; padding-top:5px; color:#666666; margin-top:0; margin-left:0; margin-right:0; margin-bottom:0; font-weight:lighter;">以下是发货详情和跟踪信息。</div>
+      		
+																																</td>
+														</tr>
+													</table>	
+														
+																		<table class="divider-big" width="100%" cellspacing="0" cellpadding="0" border="0" >
+					<tr class="divider-big">
+						<td class="divider-big" width="100%">
+							<img class="divider-big" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline: none;" border="0" height="18" width="1">
+							<img class="divider-big" src="http://email.images.apple.com/rover/aos/global/hd/hr_shaded_2x.gif" alt="" style="outline:none; display:block;" border="0" height="7" width="100%">
+						</td>
+					</tr>
+				</table>
+				<table cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody><tr>
+						<td valign="top" height="14" align="left" style="height:14px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/conciegre/spacer.gif" alt="" style="display:block; outline: none;" border="0" height="14" width="1"></td>
+					</tr></tbody>
+				</table>
+			<table class="divider-header-mobile" cellspacing="0" cellpadding="0" border="0" width="100%" >
+					<tr class="divider-header-mobile" style="line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+						<td class="divider-header-mobile" style="line-height:0px;font-size:0px;height:0px;margin:0;padding:0;" valign="top" align="left" >
+							<img class="divider-header-mobile" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="outline: none;" border="0" height="0" width="0">
+						</td>
+					</tr>
+					<tr class="divider-header-mobile-line" style="line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+						<td class="divider-header-mobile-line" valign="top" align="left" style="line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+							<img  class="divider-header-mobile-line" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline: none;" border="0" height="0" width="0" >
+						</td>
+					</tr>
+				</table>
+				
+																				
+		 	
+
+<table width="100%" class="ap-shipping-wrapper" cellspacing="0" cellpadding="0" border="0">
+	<tr>
+		<td valign="top" align="center">
+			<table class="pad-bottom-H1" cellspacing="0" height="10" cellpadding="0" border="0" width="100%">
+		  		<tr>
+			   		<td class="pad-bottom-H1" valign="top" height="10" align="left" style="font-size:10px; line-height:10px;"><img class="pad-bottom-H1" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none;" border="0" height="10" width="1"></td>
+				</tr>
+			</table>
+			<table cellspacing="0" height="3" cellpadding="0" border="0" width="100%" class="ap-9pxspacer">
+				<tr>
+					<td valign="top" height="3" align="left" style="font-size:3px; line-height:0;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none;" border="0" height="3" width="1"></td>
+				</tr>
+			</table>
+			
+			<table class="section-product-header" bgcolor="#E2E2E2" width="94%" cellspacing="0" cellpadding="0" border="0" 
+			style="-webkit-border-radius:7px;-moz-border-radius:7px; border-radius:7px; border-top:1px solid #e1e1e1; border-right:1px solid #cecece; border-left:1px solid #cecece; border-bottom:0px; -moz-box-shadow:0px 1px 1px #b4b4b4; -webkit-box-shadow:0px 1px 1px #b4b4b4; box-shadow:0px 1px 1px #b4b4b4; border-bottom-right-radius:0px; border-bottom-left-radius:0px; -moz-border-radius-bottomright:0px; -moz-border-radius-bottomleft:0px; -webkit-border-bottom-right-radius:0px; -webkit-border-bottom-left-radius:0px;">
+		  		<tr>
+		  			<td class="section-product-header" style="padding-top:20px; padding-left:20px; padding-bottom:4px; padding-right:20px;">
+					 						<table class="header-shipped-title" cellspacing="0" cellpadding="0" border="0" align="left" style="padding-right:5px;">
+					  		<tr>
+					  							  		<td class="gen-heading" valign="top" align="left" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#000000; font-size:15px; line-height:18px;">
+			 					<strong>已发货<span class="moe-hide">:</span></strong>
+		     				</td>
+		     						     				</tr>
+					  	</table>
+														<table class="header-shipped-date" cellspacing="0" cellpadding="0" border="0" align="left" style="padding-right:5px;">
+						  		<tr><td class="gen-txt" valign="top" align="left" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#000000; font-size:15px; line-height:18px;">
+				 					
+																
+交付 
+2016/07/29
+
+																
+								</td></tr>
+							</table>
+														<table class="header-shipped-delivery" cellspacing="0" cellpadding="0" border="0" align="left" style="padding-right:5px;">
+								  		<tr><td class="gen-txt-gray" valign="top" align="left" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color: #666666; font-size:15px; line-height:18px;">
+					 						 						 
+																												 						</td></tr>
+								  	</table>
+																											<table class="order-details-line2" align="left" cellspacing="0" cellpadding="0" border="0" width="100%" valign="top" style="display:none; mso-hide:all; font-size:0;line-height:0;width:0;height:0;padding:0; margin:0;" >
+	<tr>
+		<td class="order-details-line2" align="left" style="display:none; mso-hide:all; font-size:0;line-height:0;width:0;height:0;padding:0; margin:0;">
+			<a href="http://store.apple.com/go/cn/vieworder/W563269968/tanjian20150101@163.com" style="color:#FFFFFF;font-weight:normal" class="aapl-link">	
+				<span class="order-details-link" style="color:#FFFFFF; text-decoration:none; display:none; mso-hide:all; outline:none;">查看完整的订单详情</span> 
+				<img class="order-details-arrow" src="http://email.images.apple.com/rover/aos/global/hd/small_arrow_blue_2x.gif" alt="" style="color:#FFFFFF; display:none; mso-hide:all; text-decoration:none; outline:none; width:0; height:0; font-size:0px; line-height:0px;" border="0" height="0" width="0">
+			</a>
+		</td></tr>
+</table>
+												<table cellspacing="0" height="8" cellpadding="0" border="0" width="100%" class="ap-8pxspacer">
+								<tr><td height="8" style="line-height:0;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/conciegre/spacer.gif" alt="" style="display:block; outline:none;" border="0" height="8" width="1"></td></tr>
+							</table>
+							
+						 				<table class="btn-contain" align="left" cellspacing="0" cellpadding="0" border="0" style="padding-right:5px;">
+					<tr>
+					<td class="btn-contain" align="center">
+						<table class="blue-button" align="center" style="background-color:#127fd2; background-position: top left; background-repeat: repeat-x; border-top:1px solid #1992da; border-right: 1px solid #0d76bc; border-left: 1px solid #0d76bc; border-bottom: 1px solid #00599d; -webkit-border-radius:6px;-moz-border-radius:6px; border-radius:6px; -moz-box-shadow: inset 0px 0px 2px 1px #6cc6f8; -webkit-box-shadow: inset 0px 0px 2px 1px #6cc6f8; box-shadow: inset 0px 1px 1px 0px #6cc6f8;" cellpadding="2" cellspacing="0" border="0">
+							<tr>	
+								<td class="btn-txt-contain" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#ffffff; font-size:12px; padding-left: 0; padding-right: 0;" align="center" valign="middle">
+									<a class="blue-button-text" href="http://store.apple.com/go/cn/vieworder/W563269968/tanjian20150101@163.com" style="cursor:pointer; display:block; text-decoration:none; color:#ffffff !important;" target="_blank">&nbsp;<span class="blue-button-text" style="color:#ffffff; line-height:22px;">跟踪发货 </span>&nbsp;</a>
+								</td>
+							</tr>
+						</table>	
+					</td></tr>
+				</table>
+																									
+						</td>
+						</tr>
+						
+												<tr class="moe-hide">
+							<td class="moe-hide" valign="top" height="12" align="left" style="font-size:3px; line-height:0;"><img class="moe-hide" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none;" border="0" height="12" width="1"></td>
+						</tr>
+						</table>
+						<table class="section-product-content" cellspacing="0" cellpadding="14" border="0" width="94%"
+			style="margin-bottom:15px; -webkit-border-radius:7px; -moz-border-radius:7px; border-radius:7px; border-top:0px; border-right:1px solid #cecece; border-left:1px solid #cecece; border-bottom:1px solid #b4b4b4; 
+			-moz-box-shadow:0px 1px 1px #b4b4b4; -webkit-box-shadow:0px 1px 1px #b4b4b4; box-shadow:0px 1px 1px #b4b4b4; -webkit-box-shadow:inset 0 -2px 6px 1px rgba(229,229,229,1); box-shadow:inset 0 -2px 6px 1px rgba(229,229,229,1); 
+			border-top-right-radius:0px; border-top-left-radius:0px; -moz-border-radius-topright:0px; -moz-border-radius-topleft:0px; -webkit-border-top-right-radius:0px; -webkit-border-top-left-radius:0px;"> 
+				<tr>
+					<td valign="top" align="left" style="color:#000000;">
+					   <table class="app-order-row" width="100%" cellspacing="0" cellpadding="0" border="0" >
+																																																			<tr>
+									<td>
+										<table class="img-outside-container" width="110" align="left" cellspacing="0" cellpadding="0" border="0" style="padding-top:5px; padding-bottom:10px;" >
+											<tr><td>
+												    
+
+
+
+		
+	
+	
+	
+
+																															<img class="desktop-product-image" src="http://store.storeimages.cdn-apple.com/8748/as-images.apple.com/is/image/AppleInc/aos/published/images/M/E8/ME864/ME864?wid=220&hei=156&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=TZJkX3" height="78" width="110" alt="Product Image" style="outline:none; display:block;">
+												<table class="moe-img-container" align="center" width="0" height="0" style="display:none; mso-hide:all; font-size:0;line-height:0;width:0;height:0;padding:0; margin:0;">
+					<tr><td class="moe-img-container" align="center" style="display:none; font-size:0;line-height:0;width:0;height:0;padding:0; margin:0;">
+						<img class="mobile-product-image" src="http://store.storeimages.cdn-apple.com/8748/as-images.apple.com/is/image/AppleInc/aos/published/images/M/E8/ME864/ME864?wid=640&hei=350&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=TZJkX3" height="0" width="0" alt="" style="outline:none; display:none; mso-hide:all; overflow:hidden; border:0; width:0; height:0;">
+					</td></tr>
+				</table>
+																		</td></tr>
+										</table>
+            <table class="product-info-table" width="500" align="left" style="padding-left:8px; padding-bottom:5px;  margin-top:0px;" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+										<table width="100%" cellpadding="0" border="0" cellspacing="0" style="margin-top:0px;">
+						<tr>
+							<td>
+									
+	
+	<table align="left" class="product-name" width="265" style="margin-top:0px; padding-bottom:13px;" cellpadding="0" cellspacing="0" border="0" >
+		<tr>
+			<td class="product-name" align="left" valign="top" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#000000 !important; font-size:12px; line-height:20px; font-weight:bold;">			
+				配备 Retina 显示屏的 13 英寸 MacBook Pro
+						 			</td>
+		</tr>
+	</table>	
+	
+		
+				</td>
+			</tr>
+			<tr class="moe-no-pad" style="padding-left:10px;">
+										<td>
+														    																													  								</td>
+								</tr>
+								</table>								
+							</td>
+						</tr>		
+						</table>								
+</td>
+						</tr>	
+
+																																														<tr class="product-divider-gap">
+								<td class="product-divider-gap" colspan="2" width="100%" style="line-height:0px;font-size:0px;height:0px;margin:0;padding:0;" valign="top" align="left" >
+									<img class="product-divider-gap" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="outline:none;" border="0" height="0" width="0">
+						  		</td>
+						  	</tr>						  	
+							<tr>
+								<td width="100%" colspan="2">
+									<table cellpadding="0" cellspacing="0" border="0" width="100%">	
+							 			<tr>
+	<td bgcolor="D6D6D6" height="1" style="background:#D6D6D6; height:1px; font-size:1px; line-height:1px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:1px; line-height:1px;" border="0" height="1" width="1"></td>
+	<td bgcolor="D6D6D6" height="1" style="background:#D6D6D6; height:1px; font-size:1px; line-height:1px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:1px; line-height:1px;" border="0" height="1" width="1"></td>
+	<td bgcolor="D6D6D6" height="1" style="background:#D6D6D6; height:1px; font-size:1px; line-height:1px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:1px; line-height:1px;" border="0" height="1" width="1"></td>
+	<td bgcolor="D6D6D6" height="1" style="background:#D6D6D6; height:1px; font-size:1px; line-height:1px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:1px; line-height:1px;" border="0" height="1" width="1"></td>
+	<td bgcolor="D6D6D6" height="1" style="background:#D6D6D6; height:1px; font-size:1px; line-height:1px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:1px; line-height:1px;" border="0" height="1" width="1"></td>
+	<td bgcolor="D6D6D6" height="1" style="background:#D6D6D6; height:1px; font-size:1px; line-height:1px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:1px; line-height:1px;" border="0" height="1" width="1"></td>
+	<td bgcolor="D6D6D6" height="1" style="background:#D6D6D6; height:1px; font-size:1px; line-height:1px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:1px; line-height:1px;" border="0" height="1" width="1"></td>
+	<td bgcolor="D6D6D6" height="1" style="background:#D6D6D6; height:1px; font-size:1px; line-height:1px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:1px; line-height:1px;" border="0" height="1" width="1"></td>
+	<td bgcolor="D6D6D6" height="1" style="background:#D6D6D6; height:1px; font-size:1px; line-height:1px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:1px; line-height:1px;" border="0" height="1" width="1"></td>
+</tr>
+<tr>
+<td valign="top" height="10" align="left" style="height:8px; font-size:8px; line-height:8px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:8px; line-height:8px;" border="0" height="10" width="1"></td>	
+	<td height="10"></td>
+	<td height="10"></td>
+	<td height="10"></td>
+	<td height="10"></td>
+	<td height="10"></td>
+	<td height="10"></td>
+	<td height="10"></td>
+	<td height="10"></td>
+</tr>
+								 	</table>
+						  		</td>
+						  	</tr>																		
+															<tr>
+									<td>
+										<table class="img-outside-container" width="110" align="left" cellspacing="0" cellpadding="0" border="0" style="padding-top:5px; padding-bottom:10px;" >
+											<tr><td>
+												    
+
+
+
+		
+	
+	
+	
+
+																															<img class="desktop-product-image" src="http://store.storeimages.cdn-apple.com/8748/as-images.apple.com/is/image/AppleInc/aos/published/images/M/HN/MHNG2/MHNG2?wid=220&hei=156&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=dC1kD1" height="78" width="110" alt="Product Image" style="outline:none; display:block;">
+												<table class="moe-img-container" align="center" width="0" height="0" style="display:none; mso-hide:all; font-size:0;line-height:0;width:0;height:0;padding:0; margin:0;">
+					<tr><td class="moe-img-container" align="center" style="display:none; font-size:0;line-height:0;width:0;height:0;padding:0; margin:0;">
+						<img class="mobile-product-image" src="http://store.storeimages.cdn-apple.com/8748/as-images.apple.com/is/image/AppleInc/aos/published/images/M/HN/MHNG2/MHNG2?wid=640&hei=350&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=dC1kD1" height="0" width="0" alt="" style="outline:none; display:none; mso-hide:all; overflow:hidden; border:0; width:0; height:0;">
+					</td></tr>
+				</table>
+																		</td></tr>
+										</table>
+            <table class="product-info-table" width="500" align="left" style="padding-left:8px; padding-bottom:5px;  margin-top:0px;" cellpadding="0" border="0" cellspacing="0">
+			<tr>
+				<td>
+										<table width="100%" cellpadding="0" border="0" cellspacing="0" style="margin-top:0px;">
+						<tr>
+							<td>
+									
+	
+	<table align="left" class="product-name" width="265" style="margin-top:0px; padding-bottom:13px;" cellpadding="0" cellspacing="0" border="0" >
+		<tr>
+			<td class="product-name" align="left" valign="top" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#000000 !important; font-size:12px; line-height:20px; font-weight:bold;">			
+				Beats Solo2 无线头戴式耳机 - 黑色
+						 			</td>
+		</tr>
+	</table>	
+	
+		
+				</td>
+			</tr>
+			<tr class="moe-no-pad" style="padding-left:10px;">
+										<td>
+														    																													  								</td>
+								</tr>
+								</table>								
+							</td>
+						</tr>		
+						</table>								
+</td>
+						</tr>	
+
+														</table>
+				</td>
+				</tr>
+				</table>
+				</td>
+				</tr>
+				</table>
+			<table align="center" width="94%" class="divider-moe-only" cellspacing="0" cellpadding="0" border="0" height="1">
+			<tr><td class="divider-moe-only" valign="top" style="display:block; height:1px; font-size:1px; line-height:1px;" height="1" align="center">
+				<img class="divider-moe-only" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:inline; outline:none;" border="0" height="1" width="1"></td>
+			</tr>
+		</table>
+
+						
+
+	<table align="center" class="stretch-width" width="100%" cellpadding="0" border="0" cellspacing="0">
+				
+		<tr>
+		<td class="table-left-pad" width="30"> </td>
+				<td style="padding-bottom:10px;">
+					<table class="table-half" align="left" width="345" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" cellpadding="0" border="0" cellspacing="0">
+				
+					<tr width="100%">
+					<td style="padding-bottom:5px;" width="100%">
+						<table class="sec-side-heading" width="130" align="left" cellspacing="0" cellpadding="0" border="0">
+							<tr>
+															<td class="sec-side-heading" align="left" valign="top" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;
+								font-size:12px; line-height:20px; padding-bottom:5px; padding-right:5px; color:#111111; font-weight:bold; word-wrap: break-word;">
+									收货地址<span class="moe-hide">:</span></td>
+									</tr>
+						</table>
+						<table class="sec-side-details" align="left" width="160" cellspacing="0" cellpadding="0"  border="0">
+							<tr>
+								<td class="sec-side-details" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;
+								font-size:12px; line-height:20px; padding-bottom:5px; color:#111111; word-wrap: break-word;">					
+																					
+																							<div class="gen-txt" style="line-height:18px;">谭 建</div>
+<div class="gen-txt" style="line-height:18px;">中国 重庆</div>
+<div class="gen-txt" style="line-height:18px;">重庆 云阳县</div>
+<div class="gen-txt" style="line-height:18px;">龙角镇龙角街道403号</div>
+																			</td>
+								</tr>
+						</table>
+					</td>
+					</tr>
+													<tr width="100%">
+					<td width="100%">
+					<table class="sec-side-heading" width="130" align="left" cellspacing="0" cellpadding="0" border="0">
+							<tr>
+
+								<td class="sec-side-heading" align="left" valign="top" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;
+								font-size:12px; line-height:20px; padding-bottom:5px; padding-right:5px; color:#111111; font-weight:bold; word-wrap: break-word;">
+									发货通知<span class="moe-hide">:</span>
+								</td>
+							</tr>
+						</table>
+							
+						<table class="sec-side-details" align="left" width="160" cellspacing="0" cellpadding="0"  border="0">
+							<tr>
+								<td class="sec-side-details" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;
+								font-size:12px; line-height:20px; padding-bottom:5px; color:#0085cf !important; word-wrap: break-word;">					
+									<div class="gen-txt"><a href='' class="bluelink" style="color:#0085cf !important"><span class="moe-break-me">tanjian20150101@163.com</span></a></div>
+									<div class="gen-txt"></div>					
+								</td>
+							</tr>
+						</table>
+					</td>
+					</tr>
+															<tr width="100%">
+					<td width="100%">
+					<table class="sec-side-heading" width="130" align="left" cellspacing="0" cellpadding="0" border="0">
+							<tr>
+							
+								<td class="sec-side-heading" align="left" valign="top" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;
+								font-size:12px; line-height:20px; padding-bottom:5px; padding-right:5px; color:#111111; font-weight:bold; word-wrap: break-word;">
+									发票<span class="moe-hide">:</span>
+								</td>
+							</tr>
+						</table>
+							
+						
+						<table class="sec-side-details" align="left" width="160" cellspacing="0" cellpadding="0"  border="0">
+							<tr>
+								<td class="sec-side-details" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;
+								font-size:12px; line-height:20px; padding-bottom:5px; color:#111111; word-wrap: break-word;">					
+										Apple 电子收据将发送到您的电子邮箱。
+<br><br>
+如果您同时选择了需要普通发票或增值税专用发票，在订单发货后的3个工作日内,发票将通过 EMS 快递服务寄出。请在 3 个工作日后访问在线订单状态查看 EMS 快递单号以了解发票寄送状态。				
+								</td>
+							</tr>
+						</table>
+					</td>
+					</tr>
+														</table>
+
+					<table class="table-half" align="left" width="auto" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" cellpadding="0" border="0" cellspacing="0">
+			
+						<tr width="100%">
+			<td width="100%">
+					<table class="sec-side-heading" width="90px" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; word-wrap: break-word;" align="left" cellspacing="0" cellpadding="0" border="0" >
+							<tr>
+								<td class="sec-side-heading" align="left" valign="top" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;font-size:12px; line-height:20px; padding-bottom:5px; padding-right:5px; color:#111111; font-weight:bold; word-wrap: break-word;">
+									
+									承运商名称<span class="moe-hide">:</span>
+								</td>
+							</tr>
+						</table>
+					<table class="sec-side-details" align="left" width="190px" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; word-wrap: break-word;" cellspacing="0" cellpadding="0" border="0">
+							<tr>
+								<td class="sec-side-details" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; font-size:12px; line-height:20px; padding-bottom:5px; color:#111111; word-wrap: break-word;">					
+									China Post Logistics Co., Ltd
+								</td>
+							</tr>
+					</table>
+				</td>
+				</tr>
+						 													   
+				    <tr width="100%">
+			<td width="100%">
+					<table class="sec-side-heading" width="90px" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; word-wrap: break-word;" align="left" cellspacing="0" cellpadding="0" border="0" >
+							<tr>
+								<td class="sec-side-heading" align="left" valign="top" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;
+								font-size:12px; line-height:20px; padding-bottom:5px; padding-right:5px; color:#111111; font-weight:bold; word-wrap: break-word;">
+									快递单号<span class="moe-hide">:</span>
+								</td>
+							</tr>
+						</table>
+				    	<table class="sec-side-details" align="left" width="190px" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; word-wrap: break-word;" cellspacing="0" cellpadding="0" border="0">
+							<tr>
+								<td class="sec-side-details" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; font-size:12px; line-height:20px; padding-bottom:5px; color:#0085cf; word-wrap: break-word;">					
+																<a href="http://store.apple.com/go/cn/vieworder/W563269968/tanjian20150101@163.com" class="bluelink" style="color:#0085cf">EZ482613330CN</a>
+											</td>
+							</tr>
+					</table>
+					</td>
+						</tr>
+			     								
+									</table>
+											
+		</td>
+	</tr>
+		 </table>
+ 										
+																										
+    					
+			    						    		
+    		</td>
+    	</tr>
+		<tr>
+			<td valign="top" align="center"> 
+<table cellspacing="0" cellpadding="0" border="0" width="100%" class="ap-inner-divide">
+								
+					<tr>
+						<td valign="top" height="10" align="left" style="height:8px; font-size:8px; line-height:8px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none;" border="0" height="10" width="1"></td>
+					</tr>
+					<tr>
+						<td valign="top" bgcolor="D6D6D6" style="background:#D6D6D6;height:1px; font-size:1px; line-height:1px;" height="1" align="left"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none;" border="0" height="1" width="1"></td>
+					</tr>	
+									<tr>
+						<td class="moe-30" valign="top" height="15" align="left" style="height:1em; font-size:15px; line-height:15px;"><img class="moe-30" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; font-size:1px; line-height:1px;" border="0" height="15" width="1"></td>
+					</tr>
+				</table>
+				<table class="wms-txt" align="left" cellspacing="0" cellpadding="0" border="0" width="100%" style="padding-left:30px; padding-right:20px;">				
+					<tr>		
+						<td class="gen-txt" valign="bottom" align="left" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#111111; font-size:12px; line-height:18px;">
+							<a href="http://store.apple.com/go/cn/vieworder/W563269968/tanjian20150101@163.com" target="_blank" style="color:#0088cc;"><span style="color:#0088cc;">
+							要查看此订单中的所有货品，请访问在线订单状态</span> <img src="http://email.images.apple.com/rover/aos/global/hd/small_arrow_blue_2x.gif" alt="" style="display:inline; outline: none;" border="0" height="10" width="5"></a></td>
+          	 		</tr>
+          	 	</table>
+       			       	 	        	
+        					
+	<table width="100%" class="ap-19pxspacer" cellspacing="0" height="19" cellpadding="0" border="0" style="height:19px; line-height:10px; font-size:10px;" >
+		<tr>
+			<td valign="top" height="19" align="left" style="height:19px; line-height:10px; font-size:10px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline: none; height:19px; line-height:10px; font-size:10px;" border="0" height="19" width="1"></td>
+		</tr>
+	</table>
+	
+		</td>
+	</tr>
+</table>
+
+	<table class="order-mobile-only" width="100%" cellspacing="0" cellpadding="0" border="0"  align="center" style="display:none; mso-hide:all; width:0; height:0;">
+		<tr class="order-mobile-only">
+			<td class="order-mobile-only" align="left" valign="top" style="font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;" >	
+				<div class="ShipmentHeading-mobile" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+		     		订单号 
+		     	</div>
+		     	 <div class="order-mobile-link" style="font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+				 	<span class="bluelink" color="#0085cf" style="color:#0085cf;">	<a href="http://store.apple.com/go/cn/vieworder/W563269968/tanjian20150101@163.com" style="color:#0085cf !important;font-weight:normal" class="bluelink">W563269968</a>
+    </span></div>
+			<div class="order-mobile-text" style="font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+				 	2016/07/22
+				 </div>
+			</td>
+		</tr>	
+	</table>											
+	<table width="100%" class="ap-10pxspacer" cellspacing="0" height="10" cellpadding="0" border="0" style="height:8px; line-height:8px; font-size:8px;" >
+		<tr>
+			<td valign="top" height="10" align="left" style="height:8px; line-height:8px; font-size:8px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; height:8px; line-height:8px; font-size:8px;" border="0" height="10" width="1"></td>
+		</tr>
+	</table>
+											
+			
+<table id="softBanktable" class="ap-container" cellpadding="0" cellspacing="0" bgcolor="ffffff" border="0" width="100%" style="-webkit-border-radius:7px;-moz-border-radius:7px; border-radius:7px; border-top:1px solid #e1e1e1; border-right:1px solid #cecece; border-left:1px solid #cecece; border-bottom:1px solid #b4b4b4; -moz-box-shadow:0px 1px 1px #b4b4b4; -webkit-box-shadow:0px 1px 1px #b4b4b4; box-shadow:0px 1px 1px #b4b4b4; padding-top:20px; padding-bottom:20px;">
+	<tr>
+		<td>	
+				<table class="softBankcontainer" border="0" cellspacing="0" cellpadding="0" align="center" width="700">
+																<tr>
+							<td class="additionalFAQ" align="center" valign="top" style="padding-left:20px; padding-right:20px;">
+								<div class="gen-txt-softbank" valign="top" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#000000 !important; font-size:11px; line-height:18px; margin-top:0; margin-left:0; margin-right:0; margin-bottom:0; !important; padding-left:8px;">						
+									请留意，收货人须向我们的物流公司提供收货人的身份证明，或者发货通知邮件，以供我们的指定物流公司作核对用途。</div>
+							</td>
+						</tr>
+											</table>
+		</td>
+	</tr>
+</table>
+ 		<table width="100%" class="ap-10pxspacer" cellspacing="0" height="10" cellpadding="0" border="0" style="height:8px; line-height:8px; font-size:8px;" >
+			<tr>
+				<td valign="top" height="10" align="left" style="height:8px; line-height:8px; font-size:8px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; height:8px; line-height:8px; font-size:8px;" border="0" height="10" width="1"></td>
+			</tr>
+		</table>
+													
+																						<table align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+												<tr>
+													<td align="center">					
+																									                
+<table id="promoBannerTable" cellspacing="0" bgcolor="ffffff" cellpadding="22" border="0" width="100%" style="-webkit-border-radius:7px;-moz-border-radius:7px; border-radius:7px; border-top:1px solid #e1e1e1; border-right:1px solid #cecece; border-left:1px solid #cecece; border-bottom:1px solid #b4b4b4; -moz-box-shadow:0px 1px 1px #b4b4b4; -webkit-box-shadow:0px 1px 1px #b4b4b4; box-shadow:0px 1px 1px #b4b4b4;" class="ap-container">
+	<tr>
+		<td style="padding:20px 0 20px 0">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+				<tr>
+					<td align="center" valign="top" style="padding-left:20px; padding-right:20px;">
+						<div class="gen-txt" valign="top" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#000000 !important; font-size:14px; line-height:18px; margin-top:0; margin-left:0; margin-right:0; margin-bottom:0; !important; font-weight:bold; padding-left:8px;">						
+							<img src="http://email.images.apple.com/rover/aos/global/icon-shipping.jpeg" alt="" style="vertical-align:middle;" border="0" height="21" width="19">
+		           			<b>全部订单均可享受免费的直接送货上门服务。 </b>
+     		        	</div>
+    		        </td>
+				</tr>
+					</table>			
+		</td>
+	</tr>
+</table>
+		<table width="100%" class="ap-10pxspacer" cellspacing="0" height="10" cellpadding="0" border="0" style="height:8px; line-height:8px; font-size:8px;" >
+	<tr>
+		<td valign="top" height="10" align="left" style="height:8px; line-height:8px; font-size:8px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; height:8px; line-height:8px; font-size:8px;" border="0" height="10" width="1"></td>
+	</tr>
+</table>
+		            	   																					</td>
+												</tr>
+											</table> 										
+											<table align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+												<tr>
+													<td align="center">						
+														
+
+		
+
+
+
+													</td>
+												</tr>
+											</table> 						
+											
+	<table class="ap-container" id="questionstable" cellspacing="0" bgcolor="ffffff" cellpadding="0" border="0" width="100%" style="-webkit-border-radius:7px;-moz-border-radius:7px; border-radius:7px; border-top:1px solid #e1e1e1; border-right:1px solid #cecece; border-left:1px solid #cecece; border-bottom:1px solid #b4b4b4; -moz-box-shadow:0px 1px 1px #b4b4b4; -webkit-box-shadow:0px 1px 1px #b4b4b4; box-shadow:0px 1px 1px #b4b4b4;" >
+		<tr>
+			<td valign="top" align="center">
+				<table width="100%" class="secHeader-container" style="padding-top:15px; padding-left:20px; padding-right:20px;" cellspacing="0" cellpadding="0" border="0" >
+					<tr>
+						<td valign="top" align="left">
+							<div class="sectionHeading" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#000000 !important; font-size:22px; line-height:28px; font-weight:500; letter-spacing:1px; margin-top:0; margin-left:0; margin-right:0; margin-bottom:0;">问题</div>
+						</td>
+					</tr>
+				</table>
+				
+						<table width="96%" class="ap-inner-divide" align="center" cellspacing="0" cellpadding="0" border="0">
+				<tr><td class="pad-bottom-H1-nokeep" valign="top" height="10" align="left" style="height:10px; font-size:10px; line-height:10px;"><img class="pad-bottom-H1-nokeep" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none;" border="0" height="10" width="1"></td>
+				</tr>
+				<tr><td class="divider-col-line" valign="top" bgcolor="D6D6D6" style="background:#D6D6D6;height:1px; font-size:1px; line-height:1px;" height="1" align="left"><img class="divider-col-line" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none;" border="0" height="1" width="1"></td>
+				</tr>
+				<tr><td class="pad-bottom-H1-2" valign="top" height="5" align="left" style="height:5px; font-size:5px; line-height:5px;"><img class="pad-bottom-H1-2" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none;" border="0" height="5" width="1"></td>
+				</tr>
+			</table>
+			<table width="100%" class="ap-2col-content" cellspacing="0" cellpadding="0" border="0" >
+					<tr>
+						<td valign="top" width="100%"> 
+							<table valign="top" width="48%" class="table-half-1" align="left" style="width:48%; padding-left:30px; padding-top:0%; padding-bottom:8px;">						
+					 			<tr>
+					 			<td class="td-half" valign="top" align="left" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#333333 !important; font-size:12px; line-height:18px; padding-bottom:8px;">
+																																									<div class="q-txt" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#000000 !important; font-size:14px; line-height:26px; padding-top:8px; margin-top:0; margin-left:0; margin-right:0; margin-bottom:10px !important; font-weight:bold;">如果我无法签收货品该怎么办？</div>	
+																																																				我们发出的大多数货品都包含贵重物品，因此，我们的承运商会在交货时要求签收。请留意收货地址的收件人需要提供身份证明或发货通知电邮，以供我们的指定承运商作核对用途。如果本人无法签收货品，承运商将留下一张名片。您可以在随后直接联系承运商以约定新的交货时间，也可以修改交货地址。
+																																										欲了解有关 Apple 交付选项的更多信息，请访问在线<a href="http://store.apple.com/cn/help/" style="color:#0085cf" class="aapl-link">帮助</a>。																																																	</td>
+																		</tr>
+																	</table>
+																	<table valign="top" width="48%" class="table-half-2" align="right" style="width:48%; padding-right:30px; padding-top:0%; padding-bottom:8px;">
+								<tr>
+						     		<td class="td-half" valign="top" align="left" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#333333 !important; font-size:12px; line-height:18px; padding-bottom:8px;">
+										
+																																								<div class="q-txt" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif; color:#000000 !important; font-size:14px; line-height:26px; padding-top:8px; margin-top:0; margin-left:0; margin-right:0; margin-bottom:10px !important; font-weight:bold;">如何跟踪我的货品？</div>
+																																																						您可以登录到在线<a href="http://store.apple.com/go/cn/vieworder/W563269968/tanjian20150101@163.com/AOS-CN-A10000085026" style="color:#0085cf" class="aapl-link">订单状态</a>，查看订单的最新状态。如果您订购了多个货品，可能会分批收到，而且无需支付额外的运输费用。欲了解有关发货或退货的更多信息，请访问在线<a href="http://store.apple.com/cn/help/" style="color:#0085cf" class="aapl-link">帮助</a>。
+																																												您也可以于周一至周五早上9点至晚上9点，周末早上9点至晚上6点 (公共假期除外)拨打热线  400-666-8800 与我们联系。为了能够快速的处理您的查询，请您提前准备好您的订单编号。																																								</td>
+																		</tr>
+																	</table>
+																</td>							
+															</tr>						
+														</table>
+														</td>
+									</tr>
+								</table>	
+											<table width="100%" class="ap-10pxspacer" cellspacing="0" height="10" cellpadding="0" border="0" style="height:8px; line-height:8px; font-size:8px;" >
+	<tr>
+		<td valign="top" height="10" align="left" style="height:8px; line-height:8px; font-size:8px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; height:8px; line-height:8px; font-size:8px;" border="0" height="10" width="1"></td>
+	</tr>
+</table>
+
+<table class="footer-menu-table" cellspacing="0" bgcolor="ffffff" cellpadding="22" border="0" width="100%" style="-webkit-border-radius:7px;-moz-border-radius:7px; border-radius:7px; border-top:1px solid #e1e1e1; border-right:1px solid #cecece; border-left:1px solid #cecece; border-bottom:1px solid #b4b4b4; -moz-box-shadow:0px 1px 1px #b4b4b4; -webkit-box-shadow:0px 1px 1px #b4b4b4; box-shadow:0px 1px 1px #b4b4b4;">
+
+<tr class="footer-menu-table">
+	<td class="footer-menu-table" style="padding:20px 20px 28px 20px;">
+		<table class="footer-menu-table" width="630" cellspacing="0" cellpadding="0" border="0" align="center">
+			<tr class="footer-menu-table">
+				<td class="footer-menu-table" width="150" valign="top" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;">
+					<div color="#000000" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;color:#000000;font-size:12px;line-height:16px;font-weight:bold;padding:4px 0 5px 0">
+					<a href="http://store.apple.com/cn/browse/home/shop_mac?cid=CDM-CN-OM-SN-10000000" color="#000000" style="color:#000000 !important; font-size:12px !important;" class="aapl-link">
+					选购 Mac</a></div>
+					<div style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;color:#999999;font-size:11px;line-height:14px;">
+					<a href="http://store.apple.com/cn/browse/home/shop_mac/mac_accessories?cid=CDM-CN-OM-SN-10000000" style="color:#999999" class="aapl-link">
+					Mac 配件</a></div>
+					<div style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;color:#999999;font-size:11px;line-height:14px;">
+					<a href="http://store.apple.com/cn/browse/home/shop_mac/software?cid=CDM-CN-OM-SN-10000000" style="color:#999999" class="aapl-link">
+					Mac 软件</a></div>
+					 				</td>
+				<td class="footer-menu-table" width="1" bgcolor="#e9e9e9" style="font-size:1px;line-height:1px;-webkit-text-size-adjust:none">&nbsp;</td>
+				<td class="footer-menu-table" width="146" valign="top" style="padding-left:19px; font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;">
+					<div color="#000000" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;color:#000000;font-size:12px;line-height:16px;font-weight:bold;padding:4px 0 5px 0">
+					<a href="http://store.apple.com/cn/browse/home/shop_ipod?cid=CDM-CN-OM-SN-10000000" color="#000000" style="color:#000000 !important; font-size:12px !important;" class="aapl-link">
+					选购 iPod</a></div>
+					<div style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;color:#999999;font-size:11px;line-height:14px;">
+					<a href="http://store.apple.com/cn/browse/home/shop_ipod/ipod_accessories?cid=CDM-CN-OM-SN-10000000" style="color:#999999" class="aapl-link">
+					iPod 配件</a></div>
+					 				</td>
+				<td class="footer-menu-table" width="1" bgcolor="#e9e9e9" style="font-size:1px;line-height:1px;-webkit-text-size-adjust:none">&nbsp;</td>
+				<td class="footer-menu-table" width="149" valign="top" style="padding-left:19px; font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;">
+					<div color="#000000" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;color:#000000;font-size:12px;line-height:16px;font-weight:bold;padding:4px 0 5px 0">
+					<a href="http://store.apple.com/cn/browse/home/shop_iphone?cid=CDM-CN-OM-SN-10000000" color="#000000" style="color:#000000 !important; font-size:12px !important;" class="aapl-link">
+					选购 iPhone</a></div>
+					<div style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;color:#999999;font-size:11px;line-height:14px;">
+					<a href="http://store.apple.com/cn/browse/home/shop_iphone/iphone_accessories?cid=CDM-CN-OM-SN-10000000" style="color:#999999" class="aapl-link">
+					iPhone 配件</a></div>
+					 				</td>
+				<td class="footer-menu-table" width="1" bgcolor="#e9e9e9" style="font-size:1px;line-height:1px;-webkit-text-size-adjust:none">&nbsp;</td>
+				<td class="footer-menu-table" width="125" valign="top" style="padding-left:19px; font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;">
+					<div color="#000000" style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;color:#000000;font-size:12px;line-height:16px;font-weight:bold;padding:4px 0 5px 0">
+					<a href="http://store.apple.com/cn/go/ipad?cid=CDM-CN-OM-SN-10000000" color="#000000" style="color:#000000 !important; font-size:12px !important;" class="aapl-link">
+					选购 iPad</a></div>
+					<div style="font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif;color:#999999;font-size:11px;line-height:14px;">
+					<a href="http://store.apple.com/cn/go/ipad/accessories?cid=CDM-CN-OM-SN-10000000" style="color:#999999" class="aapl-link">
+					iPad 配件</a></div>
+					 				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+</table>
+												<table class="footer-menu-table-mobile" width="100%" cellspacing="0" cellpadding="0" border="0" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+		<tr class="footer-menu-table-mobile-line" width="0" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+			<td class="footer-menu-table-mobile-line" valign="top" align="center" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">								
+				<img class="footer-menu-table-mobile-line" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:none; outline:none;  font-size:0px; line-height:0;" border="0" height="0" width="0">
+			</td>
+		</tr>
+		<tr class="footer-menu-table-mobile" width="0" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+			<td class="footer-menu-table-mobile" valign="top" align="center" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">								
+				<span class="footer-menu-table-mobile" style="font-size:0px; line-height:0px; color:#ECECEC;font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;">
+					<a class="footer-menu-table-mobile" href="http://store.apple.com/cn" style="color:#ECECEC" color="#ECECEC">在线选购</a> &nbsp;&nbsp; <span color="#ECECEC"> | </span> &nbsp;&nbsp; 
+					<a class="footer-menu-table-mobile" href="http://www.apple.com/cn/retail/" style="color:#ECECEC" color="#ECECEC">查找零售店</a> &nbsp;&nbsp; <span color="#ECECEC"> | </span> &nbsp;&nbsp; 
+					<a class="footer-menu-table-mobile" href="" style="color:#ECECEC" color="#ECECEC"><span style="white-space:nowrap;">400-666-8800</span></a>
+				</span>
+			</td>
+		</tr>
+		<tr class="footer-menu-table-mobile-line" width="0" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+			<td class="footer-menu-table-mobile-line" valign="top" align="center" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">								
+				<img class="footer-menu-table-mobile-line" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:none; outline:none;  font-size:0px; line-height:0;" border="0" height="0" width="0">
+			</td>
+		</tr>
+		<tr class="footer-menu-table-mobile" width="0" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+			<td class="footer-menu-table-mobile" valign="top" align="center" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">								
+				<span class="footer-menu-table-mobile" style="font-size:0px; line-height:0px; color:#979797;font-family:'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif;">
+					<a class="footer-menu-table-mobile" href="http://store.apple.com/us/go/app?" class="aapl-link" style="color:#ECECEC" color="#ECECEC">获取 Apple Store App</a>
+				</span>							
+			</td>
+		</tr>
+		<tr class="footer-menu-table-mobile-line" width="0" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">
+			<td class="footer-menu-table-mobile-line" valign="top" align="center" style="mso-hide:all; line-height:0px;font-size:0px;height:0px;margin:0;padding:0;">								
+				<img class="footer-menu-table-mobile-line" src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:none; outline:none;  font-size:0px; line-height:0;" border="0" height="0" width="0">
+			</td>
+		</tr>
+	</table>			
+						
+					<table width="100%" class="ap-10pxspacer" cellspacing="0" height="10" cellpadding="0" border="0" style="height:8px; line-height:8px; font-size:8px;" >
+		<tr>
+			<td valign="top" height="10" align="left" style="height:8px; line-height:8px; font-size:8px;"><img src="http://email.images.apple.com/dm/groups/aos/om/global/cmon/spacer.gif" alt="" style="display:block; outline:none; height:8px; line-height:8px; font-size:8px;" border="0" height="10" width="1"></td>
+		</tr>
+	</table>
+											<table id="footer-section-lines" width="100%" align="left" style="padding-top:10px; padding-left:20px; padding-right:20px; padding-bottom:8px;" cellpadding="0" cellspacing="0" border="0" >
+												            									<tr>								
+													<td>		
+														<table class="promo-footer-line" align="left" cellpadding="0" cellspacing="0" border="0">
+				<tr>
+					<td>					
+						<span class="footer-txt" style="font-size:11px; line-height:1.3em; color:#979797;font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif">
+							版权所有 &#169; 2016&nbsp;<a color="#979797" style="text-decoration:none !important;color:#979797 !important;">Apple Inc.</a>&#32;保留所有权利。
+																	</span>
+													<span class="mobile-only-element" style="width:0; height:0;font-size:0;line-height:0;mso-hide:all;display:none;">
+																		 &#160; 
+																	</span>
+																	<span class="footer-copyright-space" style="font-size:11px; line-height:1.3em; color:#979797;font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif"> &#160;&#160; | &#160;&#160; </span>
+																	<span class="footer-txt" style="font-size:11px; line-height:1.3em; color:#979797;font-family:'Lucida Grande','Lucida Sans','Lucida Sans Unicode', Arial, Helvetica, Verdana, sans-serif">
+																		<a href="http://www.apple.com/cn/legal/terms/site.html" style="color:#0085cf !important" class="aapl-link" color="#0085cf">使用条款</a> &#160;&#160; | 
+																		 &#160;&#160; <a href="http://www.apple.com/cn/privacy/" style="color:#0085cf !important" class="aapl-link" color="#0085cf">隐私政策</a> &#160;&#160; | 
+																		 &#160;&#160; <a href="http://www.apple.com/cn/shop/open/salespolicies" style="color:#0085cf !important" class="aapl-link" color="#0085cf">销售政策</a>
+																	</span>
+																</td>
+															</tr>
+														</table>	
+													</td>		
+												</tr>
+															<tr><td><img src="http://outsideapple.apple.com/img/APPLE_EMAIL_LINK/spacer4.gif?v=2&a=j%2BaAlQCDj3HgvaMavVtrrMwZvdhPOZYYCiEsuXrRcX6DnyiuyqRKLgq8rywohfwigE%2ByzZCzhFaMIV5gV9E3AQ8zBQcUMTBX9wyVfda7C0dsZC2bG9L5K7IA68caRNsvyrvLAtV1Nn8gK4n9xC2U9x5dQZJDLCiISB7QjLDltzrQScvxAwe5Q57zc%2B4BJsX90ELDIcxjpYxHsAfw1yXVyx9R41ScVnUYkaCrbxltD8a2%2Fm5TrZH8%2F5VsAlmR%2BcdK2iwLqrN2gJ5Wme6FNTlocY%2BhW6XPlHZcbkZ4JfEKuiiDgukCx0qga7p7%2FVT9b2qqs4tMna4s7aziKU4DcXTIhB9UjSyWrVuUAsVhA7NmKIKQ21r2T7pSxHcYmrbDLSUUhXnwMCadPDg6IFD4%2FuxI%2BQ%3D%3D" border="0" alt=""></td></tr>
+													<tr><td><img src="http://metrics.apple.com/b/ss/appleuscdmclickmap/1/H.4-pdv-2/SN?[AQB]&pageName=OM-CN-SN&r=D%3DReferer&v1=D%3DUser-Agent&v9=D%3DpageName&[AQE]" width="1" height="1" alt="0"></td></tr>
+																																				</table>
+					</td>
+						</tr>
+					</table>
+					</td>
+						</tr>
+					</table>
+					</center>	
+				</td>
+			</tr>
+		</table>
+	
+</body>
+</html>

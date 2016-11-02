@@ -65,9 +65,7 @@ public class letterList extends ListView {
         // 获取删除按钮的宽度
         mDeleteBtnWidth = mPointChild.getChildAt(1).getLayoutParams().width;
         mLayoutParams = (LinearLayout.LayoutParams) mPointChild.getChildAt(0).getLayoutParams();
-        // 为什么要重新设置layout_width 等于屏幕宽度
         // 因为match_parent时，不管你怎么滑，都不会显示删除按钮
-        // why？ 因为match_parent时，ViewGroup就不去布局剩下的view
         mLayoutParams.width = mScreenWidth;
         mPointChild.getChildAt(0).setLayoutParams(mLayoutParams);
     }

@@ -29,17 +29,31 @@ public class CURDutil {
         this.db = dbHelper.getWritableDatabase();
     }
 
-    public void add(List<accountRec> sheets) {
+    public void add(List<accountRec> emailaccount) {
         db.beginTransaction();//开始事务
         try {
-            for (accountRec item : sheets) {
-                db.execSQL("INSERT INTO eamilAccount VALUES (null,null,?,?,?)"
+            for (accountRec item : emailaccount) {
+                db.execSQL("INSERT INTO eamilAccount VALUES (null,?,?)"
                         , new Object[]{item.getAccount(), item.getPasswd()});
             }
             db.setTransactionSuccessful();//设置事务成功完成
         } catch (Exception e) {
             Toast.makeText(context, e.toString(), Toast.LENGTH_LONG);//通知显示异常
         } finally {
+            db.endTransaction();//结束事务
+            Toast.makeText(context,"添加成功",Toast.LENGTH_LONG);
+        }
+    }
+
+    public void addAccount(accountRec account){
+        db.beginTransaction();//开始事务
+        try{
+
+        }catch (Exception e){
+            db.execSQL("INSERT INTO eamilAccount VALUES (null,?,?)"
+                    , new Object[]{account.getAccount(), account.getPasswd()});
+            db.setTransactionSuccessful();//设置事务成功完成
+        }finally {
             db.endTransaction();//结束事务
             Toast.makeText(context,"添加成功",Toast.LENGTH_LONG);
         }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,18 +17,23 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import cn.tanjianff.simpleemailapp.dbEntity.MailBean;
+import cn.tanjianff.simpleemailapp.dbEntity.accountRec;
+import cn.tanjianff.simpleemailapp.dbEntity.receiveMailBean;
 import cn.tanjianff.simpleemailapp.util.CURDutil;
+import cn.tanjianff.simpleemailapp.util.javaMailUtil;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private letterList letterlistview;
 
-    private ArrayList<String> letterlistData;
+    private static ArrayList<receiveMailBean> letterlistData=new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,11 +58,10 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //接受数据,绑定listview展示邮件列表
         letterlistview= (letterList) findViewById(R.id.letterlist);
-        letterlistData= new ArrayList<>();
-        for(int i=0;i<50;i++) {
-            letterlistData.add("xxx发来邮件" + i);
-        }
+
+        new Thread(new networkTask()).start();
 
         letterlistview.setAdapter(new letterListItemAdapter());
         letterlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,9 +72,6 @@ public class MainActivity extends AppCompatActivity
                     Intent intent=new Intent();
                     intent.setClass(MainActivity.this,ScrollingActivity.class);
                     MainActivity.this.startActivity(intent);
-                    Snackbar.make(view,  "你点击了"+letterlistData.get(position), Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                    //Toast.makeText(MainActivity.this, letterlistData.get(position), Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -103,7 +105,6 @@ public class MainActivity extends AppCompatActivity
             Intent intent=new Intent();
             intent.setClass(MainActivity.this,SettingsActivity.class);
             MainActivity.this.startActivity(intent);
-           // Toast.makeText(this,"设置",Toast.LENGTH_SHORT);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -114,7 +115,12 @@ public class MainActivity extends AppCompatActivity
     class letterListItemAdapter extends BaseAdapter {
         @Override
         public int getCount() {
-            return letterlistData.size();
+            if(letterlistData!=null){
+                return letterlistData.size();
+            }
+            else {
+                return 0;
+            }
         }
 
         @Override
@@ -135,7 +141,7 @@ public class MainActivity extends AppCompatActivity
             TextView tv = (TextView) convertView.findViewById(R.id.mailTitle);
             TextView delete = (TextView) convertView.findViewById(R.id.maildelete);
 
-            tv.setText(letterlistData.get(position));
+            tv.setText(letterlistData.get(position).getSubject());
 
             final int pos = position;
             delete.setOnClickListener(new View.OnClickListener() {
@@ -147,6 +153,23 @@ public class MainActivity extends AppCompatActivity
                 }
             });
             return convertView;
+        }
+    }
+
+    class networkTask implements Runnable {
+        @Override
+        public void run() {
+            String[] userProps = getIntent().getStringArrayExtra("userProps");
+            MailBean mailBean = new MailBean();
+            if (userProps != null) {
+                try {
+                    mailBean.setUsername(userProps[0]);
+                    mailBean.setPassword(userProps[1]);
+                    letterlistData.addAll(javaMailUtil.receive(mailBean));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

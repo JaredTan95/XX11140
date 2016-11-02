@@ -31,4 +31,6 @@ dependencies {
     compile 'com.android.support:support-vector-drawable:24.1.1'
     testCompile 'junit:junit:4.12'
     compile files('libs/sun.misc.BASE64Decoder.jar')
+    compile files('libs/mail.jar')
+    compile files('libs/activation.jar')
 }

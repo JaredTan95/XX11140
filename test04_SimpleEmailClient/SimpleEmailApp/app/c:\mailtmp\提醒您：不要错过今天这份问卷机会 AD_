@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>OpinionWorld - 问卷邀请</title>
+      <style type="text/css">
+
+         /*480px */
+         @media only screen and (max-width: 480px){
+         table.container {width:90% !important; text-align:left !important;}
+		 outterTable {width:90% !important;}
+         /* Main Middle middle button */
+         span[class=banner] {
+         display:block;
+         background-image:  url(http://webassets.ssisurveys.com/opinionworld/html-email-images/2015/CN/invite/DefaultBannerMobile_2.gif) !important;
+         background-repeat: no-repeat !important;
+         background-position: center !important;
+         width: 100% !important;
+         height: 150px !important;
+         }
+         img[class=banner] {display: none !important;}
+         .SurveyButton { padding:0 !important;}
+         .SurveyButton a {width:100% !important;}
+         .mainContent { text-align:center !important;}
+         .Reward {width:100% !important;}
+         .AveLength {width:100% !important;}
+         .PtBalance {width:100% !important;}
+		 .block {display: none !important;}
+		 .mainContentleft {width:0 !important;}
+         }
+         /* Typography */    
+         body, table.body, h1, h2, h3, h4, h5, h6, p, span, td { 
+         font-family: SimSun, Arial, 宋体, 黑体, 微软雅黑, sans-serif;
+         }
+         a {color:#0a8cce;}
+		 
+		 p{ padding:15px 20px 5px 30px !important; font-size:15px;}
+		 
+		 /*Yahoo fixed*/
+		body {background-color: #dddddd; border-bottom: none;}
+		 
+      </style>
+   </head>
+   <body bgcolor="#dddddd"  style="background-color:#dddddd">
+   <!-- 32--> <!-- 健 -->
+      <table class="outterTable"  width="100%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#dddddd" valign="top" style="border:2px solid #dddddd;">
+         <tr>
+            <td align="center">
+               <!-- Container -->
+               <br>
+               <table valign="top" width="550" border="0" align="center" cellpadding="0" cellspacing="0" class="container">
+                   <tr>
+                      <!-- unsubscribe row -->
+                     <td align="left" valign="top" bgcolor="white" class="logo" style="padding: 15px 20px 5px 10px; border-left: 3px solid white; border-right: 3px solid white; line-height: 22px; font-size: 12px; text-align:center;">
+                      您收到这封邮件因为您是集思网会员。如有疑问，请联系<a style="color:#ed193e;" href="mailto:helpdesk@opinionworld.cn">helpdesk@opinionworld.cn</a>. 
+                        
+                        <a href="https://www.opinionworld.cn/zh-cn/secured/my-account/unsubscribe?entity_id=1349847147&pw=825622" style=" text-align:center; color:#ed193e; padding-left:15px;" >退订</a>  | 
+                        
+                        <a href="https://www.opinionworld.cn/zh-cn/secured/support?entity_id=1349847147&pw=825622" style="text-align:center; color:#ed193e;" >帮助</a>   
+                        <!-- unsubscribe end-->
+                 </tr>
+                  <tr>
+                     <!-- logo row -->
+                     <td align="left" valign="top" bgcolor="#ffffff" class="logo" style="padding: 15px 20px 5px 10px; border-left: 3px solid white; border-right: 3px solid white; line-height: 22px;">
+                        <a href="#" style="text-decoration: none; "><img height="80" width="244" border="0" src="http://webassets.ssisurveys.com/opinionworld/html-email-images/2014/logo/logoCN.jpg" alt="OpinionWorld - 您怎什么想的" /></a> 
+                        <!-- logo end-->
+                 </tr>
+                  <tr>
+                     <!-- Salutation row -->
+                     <td align="left" valign="top" bgcolor="#ebf9fe" class="Salutation" style="padding: 15px 20px 15px 30px; border-left: 3px solid #ebf9fe; border-right: 3px solid #ebf9fe; font-size: 15px; font-weight:bold; line-height: 22px; color:#005a75;">尊敬的谭先生： 好消息！您有一份新的问卷邀请！ </td>
+                     <!-- Salutation end -->
+                  </tr>
+                  <tr>
+                     <!-- surveyButton roll -->
+                     <td align="center" valign="top" bgcolor="#1491bb" class="surveyButton" style="padding: 15px 20px 15px 30px; border-left: 3px solid #1491bb; border-right: 3px solid #1491bb; font-size: 15px; font-weight:bold; line-height: 22px; color:#005a75;">
+                        <table cellspacing="0" cellpadding="0">
+                           <tr>
+                              <td align="center" class="SurveyButton" width="300" height="40" bgcolor="#ed193e" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;"><a href="http://dkr1.ssisurveys.com/projects/start?psid=-bs_F4RAzQ3xQSURf5NaDCDwm76KpFvw" style="color: #ffffff; font-size:22px; font-weight: bold;  text-decoration: none; line-height:40px; width:100%; display:inline-block">开始答题</a></td>
+                           </tr>
+                        </table>
+                     </td>
+                     <!-- surveyButton end -->
+                  </tr>
+                  <tr>
+                     <!-- dKCode row -->
+                     <td valign="top" bgcolor="white" class="dkCode" style="padding: 10px 0 10px 0; border-right:3px solid #1491bb; border-left:3px solid #1491bb; border-bottom:3px solid #1491bb; background-color:white; ">
+                        <!-- Reward row -->
+                        <table class="Reward" width="30%" border="0" cellspacing="0" cellpadding="0" align="left">
+                           <tr>
+                              <td style=" font-size: 13px; color: #005a75; text-align:center; line-height: 24px;"><strong>奖励</strong>:  66 积分 </td>
+                           </tr>
+                        </table>
+                        <!-- Reward end -->
+                        <!-- AveLength row -->
+                        <table class="AveLength" width="30%" border="0" cellspacing="0" cellpadding="0" align="left">
+                           <tr>
+                              <td style=" font-size: 13px; color: #005a75; text-align:center; line-height: 24px;"><strong>平均长度</strong>: 18 分钟 </td>
+                           </tr>
+                        </table>
+                        <!-- AveLength end -->
+                        <!-- PtBalance row -->
+                        <table class="PtBalance" width="30%" border="0" cellspacing="0" cellpadding="0" align="left">
+                           <tr>
+                              <td style=" font-size: 13px; color: #005a75; text-align:center; line-height: 24px;"><strong>积分余额</strong>: 0 </td>
+                           </tr>
+                        </table>
+                        <!-- AveLength end -->
+                        
+                        <!-- dKCode end -->
+                     </td>
+                  </tr>
+                  <tr>
+                     <!-- mainContent row -->
+                     <td align="left" valign="top" bgcolor="#ffffff" class="mainContent" style="border-left: 3px solid white; border-right: 3px solid white; border: none !important; line-height: 22px;" >
+                        
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td class="mainContentleft" style="width:30px;"><img src="http://webassets.ssisurveys.com/opinionworld/html-email-images/2015/AU/invite/block.gif" alt="" class="block" width="30" border="0" hspace="0" vspace="0"></td>
+      <td width="95%" style="font-family: SimSun, Arial, 宋体, 黑体, 微软雅黑, sans-serif; font-size:14px;"><br>
+<b>现在就参与问卷吧。</b>
+<br/>
+点击“参与问卷”按钮，下一份奖励近在咫尺啦！
+<br/> <br>
+<br>
+祝您答题愉快！ <br>
+集思网团队</td>
+    </tr>
+  </tbody>
+</table>
+
+
+                     </td>
+                     <!-- mainContent end -->
+                  </tr>
+                  <tr>
+                     <!-- banner row -->
+                     <td valign="top" class="banner" bgcolor="#ffffff" style="padding: 0px 20px 5px 10px; border-left: 3px solid white; border-right: 3px solid white; line-height: 22px;">
+                        <span class="banner"><img src="http://webassets.ssisurveys.com/opinionworld/html-email-images/2015/CN/invite/DefaultBanner_2.gif" alt="赢取各种奖励：" class="banner" width="560" style="vertical-align:top; padding-bottom:12px;" border="0" hspace="0" vspace="0"></span>
+                     </td>
+                  </tr>
+                  <tr>
+                     <!-- surveyButton roll -->
+                     <td align="center" valign="top" bgcolor="#1491bb" class="surveyButton" style="padding: 15px 20px 15px 30px; border-left: 3px solid #1491bb; border-right: 3px solid #1491bb; font-size: 15px; font-weight:bold; line-height: 22px; color:#005a75;">
+                        <table cellspacing="0" cellpadding="0">
+                           <tr>
+                              <td align="center" class="SurveyButton" width="300" height="40" bgcolor="#f69220" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; color: #ffffff; display: block;"><a href="http://dkr1.ssisurveys.com/projects/start?psid=-bs_F4RAzQ3xQSURf5NaDCDwm76KpFvw" style="color: #ffffff; font-size:22px; font-weight: bold;  text-decoration: none; line-height:40px; width:100%; display:inline-block">开始答题</a></td>
+                           </tr>
+                        </table>
+                     </td>
+                     <!-- surveyButton end -->
+                  </tr>
+                  <tr>
+                     <!-- extraLink roll -->
+                     <td align="left" valign="top" bgcolor="#117aa0" class="extraLink" style="padding: 15px 20px 15px 30px; border-left: 3px solid #117aa0; border-right: 3px solid #117aa0; font-size: 12px; font-weight:bold; line-height: 22px; color:white; font-family: SimSun, Arial, 宋体, 黑体, 微软雅黑, sans-serif;">
+                        <strong>无法点击以上按钮参与问卷？请复制以下链接，直接拷贝到您的浏览器参与答题:</strong><br />
+                        <span style="font-size:10px; "><a style="color:white;" href="http://dkr1.ssisurveys.com/projects/start?psid=-bs_F4RAzQ3xQSURf5NaDCDwm76KpFvw">http://dkr1.ssisurveys.com/projects/start?psid=-bs_F4RAzQ3xQSURf5NaDCDwm76KpFvw</a></span>
+                     </td>
+                     <!-- surveyButton end -->
+                  </tr>
+                  <tr>
+                     <!-- footerLinks roll -->
+                     <td align="center" valign="top" bgcolor="#242424" class="footerLinks" style="padding: 15px 20px 15px 30px; border-left: 3px solid #242424; border-right: 3px solid #242424; font-size: 12px; line-height: 22px; color:white">
+                        <a style="#0a8cce !important;" href="https://www.opinionworld.cn/zh-cn/policies/privacy">隐私声明 </a> | <a style="#0a8cce !important;" href="https://www.opinionworld.cn/zh-cn/policies/terms">条款与准则</a> | <a style="#0a8cce !important;" href="https://www.opinionworld.cn/zh-cn/secured/support?entity_id=1349847147&pw=825622">联系我们</a> | <a style="#0a8cce !important;" href="https://www.opinionworld.cn/zh-cn/secured/my-account/unsubscribe?entity_id=1349847147&pw=825622" target="_blank">注销</a>
+                        <!-- footerLinks end -->
+                     </td>
+                  </tr>
+                  <tr>
+                     <!-- disclaimer roll -->
+                     <td align="left" valign="top" bgcolor="#242424" class="disclaimer" style="padding: 15px 20px 15px 30px; border-left: 3px solid #242424; border-right: 3px solid #242424; font-size: 12px;  line-height: 22px; color:white">
+                        © Survey Sampling International LLC. 版权所有。 京ICP备14009302 号<br />
+                        亚马逊：兑换成功后礼品卡的详细使用规定请参照亚马逊中国官方网站<br />
+                        <br />
+                        <!-- socialMediaIcons roll -->
+                        <table border="0" cellspacing="0" cellpadding="0">
+                           <tr>
+                              <td class="socialMediaIcons"><a href="http://www.weibo.com/opinionworldcn" target="_blank"><img src="http://webassets.ssisurveys.com/opinionworld/html-email-images/2015/CN/invite/wibo.gif" alt="微博"  style="vertical-align:top; padding-bottom:12px;" border="0" hspace="0" vspace="0"></a></td>
+                              <td style="padding-left:10px;">&nbsp;</td>
+                              <td style="padding-left:10px;">&nbsp;</td>
+                           </tr>
+                        </table>
+                        
+                        <!-- socialMediaIcons end -->
+                     </td>
+                     <!-- disclaimer end -->
+                  </tr>
+                  <!-- container close here -->
+               </table>
+               <br>
+               <br>
+               <br><br>
+
+            </td>
+         </tr>
+         <!-- main table close here -->
+      </table>
+   </body>
+</html>
