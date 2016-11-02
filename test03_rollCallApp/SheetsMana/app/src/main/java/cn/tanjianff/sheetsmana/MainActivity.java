@@ -1,6 +1,7 @@
 package cn.tanjianff.sheetsmana;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -33,16 +34,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setSupportActionBar(toolbar);
         curdUtil=new CURDutil(getApplicationContext());
         listview= (ListView) findViewById(R.id.listView);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO:添加导入数据的操作
-                Intent intent=new Intent();
-                intent.setClass(MainActivity.this,IOExcelActivity.class);
-                MainActivity.this.startActivity(intent);
-                Snackbar.make(view,"可以导入Excel表格", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, "Snack Bar Text", Snackbar.LENGTH_LONG)
+                        .setAction("I/OExcel", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent intent = new Intent(MainActivity.this, IOExcelActivity.class);
+                                startActivity(intent);
+                            }
+                        })
+                        .setActionTextColor(Color.WHITE).show();
             }
         });
 
@@ -97,14 +103,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+        if(id==R.id.action_add){
+          return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -141,11 +147,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void testAddData(){
         ArrayList<stuSheet> students = new ArrayList<stuSheet>();
-        stuSheet std1 = new stuSheet("wpg", "631406010122", "Jenny", "计科一班","1","1"," "," "," ");
-        stuSheet std2 = new stuSheet("sdd", "631406010122", "Jessica", "计科一班","1","1"," "," "," ");
-        stuSheet std3 = new stuSheet("dsfs", "631406010122", "sexy girl", "计科一班","1","1","1"," "," ");
-        stuSheet std4 = new stuSheet("dfswrt", "631406010122", "Kelly", "计科一班","1","1"," "," "," ");
-        stuSheet std5 = new stuSheet("fhjtr", "631406010122", "Jane", "计科一班","1","1"," "," "," ");
+        stuSheet std1 = new stuSheet("wpg", "631406010122", "Jenny", "计科一班","11100");
+        stuSheet std2 = new stuSheet("sdd", "631406010123", "Jessica", "计科一班","11000");
+        stuSheet std3 = new stuSheet("dsfs", "631406010124", "sexy girl", "计科一班","00000");
+        stuSheet std4 = new stuSheet("dfswrt", "631406010125", "Kelly", "计科一班","01011");
+        stuSheet std5 = new stuSheet("fhjtr", "631406010126", "Jane", "计科一班","11111");
         students.add(std1);
         students.add(std2);
         students.add(std3);
@@ -153,7 +159,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         students.add(std5);
         curdUtil.add(students);
     }
-
 
     @Override
     protected void onDestroy() {

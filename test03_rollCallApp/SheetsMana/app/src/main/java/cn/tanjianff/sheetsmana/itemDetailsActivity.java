@@ -71,20 +71,15 @@ public class itemDetailsActivity extends AppCompatActivity {
         Intent intent=getIntent();
         int position=0;
         intent.getIntExtra("clickItemOrder",position);
-        CURDutil queryCollection=new CURDutil(getApplicationContext());
+        /*CURDutil queryCollection=new CURDutil(getApplicationContext());
         ArrayList<stuSheet> collections=new ArrayList<> ();
         String strpos=String.valueOf(position);
         collections.addAll(queryCollection.queryComment(strpos));
-        editText_id.setText(intent.getIntExtra("clickItemOrder",position)+""+queryCollection.queryComment(strpos).toString());
+        editText_id.setText(intent.getIntExtra("clickItemOrder",position));
 
         if(!collections.isEmpty()){
             stuSheet current=collections.get(0);
             String state[]=new String[5];
-            state[0]=current.getCase1();
-            state[1]=current.getCase2();
-            state[2]=current.getCase3();
-            state[3]=current.getCase4();
-            state[4]=current.getCase5();
             for(int i=0;i<state.length;i++){
                 if(state[i]!=null){
                     checkBoxes[i].setEnabled(true);
@@ -96,7 +91,7 @@ public class itemDetailsActivity extends AppCompatActivity {
             icon.setImageURI(Uri.parse(current.getIcon()));
             editText_name.setText(current.getStd_name());
             editText_id.setText(current.getStd_id());
-        }
+        }*/
     }
 
     @Override

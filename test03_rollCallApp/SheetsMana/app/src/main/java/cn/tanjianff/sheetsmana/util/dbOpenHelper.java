@@ -25,10 +25,9 @@ public class dbOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //创建stuSheet表
-        db.execSQL("CREATE TABLE IF NOT EXISTS stuSheet"
-                +"(id INTEGER PRIMARY KEY AUTOINCREMENT,icon VARCHAR,std_id VARCHAR NOT NULL,"
-                + "std_name VARCHAR NOT NULL,std_className VARCHAR NOT NULL,"
-                + "case1 VARCHAR,case2 VARCHAR,case3 VARCHAR,case4 VARCHAR,case5 VARCHAR);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS stuSheet " +
+                "(ID INTEGER PRIMARY KEY AUTOINCREMENT,icon BLOB,std_id VARCHAR NOT NULL,"
+                + "std_name VARCHAR NOT NULL,std_className VARCHAR NOT NULL,caseSelection VARCHAR);");
     }
 
     @Override
