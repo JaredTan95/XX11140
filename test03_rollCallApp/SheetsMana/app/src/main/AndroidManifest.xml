@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="cn.tanjianff.sheetsmana">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_hands"
@@ -21,6 +25,8 @@
         <activity android:name=".IOExcelActivity">
         </activity>
         <activity android:name=".itemDetailsActivity">
+        </activity>
+        <activity android:name=".AddItemActivity">
         </activity>
     </application>
 

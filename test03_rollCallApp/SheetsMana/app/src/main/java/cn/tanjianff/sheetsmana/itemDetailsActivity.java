@@ -3,6 +3,7 @@ package cn.tanjianff.sheetsmana;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -20,9 +21,14 @@ import java.util.ArrayList;
 
 import cn.tanjianff.sheetsmana.entity.stuSheet;
 import cn.tanjianff.sheetsmana.util.CURDutil;
+import cn.tanjianff.sheetsmana.util.ImagBiStorage;
 
 public class itemDetailsActivity extends AppCompatActivity {
 
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    private static Bitmap iconBitmap;
+    private byte[] imgbytes;
     private EditText editText_name;
     private EditText editText_id;
     private ImageView icon;
@@ -41,10 +47,7 @@ public class itemDetailsActivity extends AppCompatActivity {
         icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("*/*");
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                itemDetailsActivity.this.startActivityForResult(intent,1);
+                dispatchTakePictureIntent();
             }
         });
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -96,15 +99,20 @@ public class itemDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == Activity.RESULT_OK) {//是否选择，没选择就不会继续
-            Uri uri = data.getData();//得到uri，后面就是将uri转化成file的过程。
-            String[] proj = {MediaStore.Images.Media.DATA};
-            Cursor actualimagecursor = managedQuery(uri, proj, null, null, null);
-            int actual_image_column_index = actualimagecursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            actualimagecursor.moveToFirst();
-            String img_path = actualimagecursor.getString(actual_image_column_index);
-            File file = new File(img_path);
-            Toast.makeText(itemDetailsActivity.this, file.toString(), Toast.LENGTH_SHORT).show();
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            iconBitmap = (Bitmap) extras.get("data");
+            imgbytes=new ImagBiStorage(getApplicationContext()).Img2Byte(iconBitmap);
+            icon.setImageBitmap(iconBitmap);
+        }
+    }
+
+
+    //打开相机功能
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
     }
 }

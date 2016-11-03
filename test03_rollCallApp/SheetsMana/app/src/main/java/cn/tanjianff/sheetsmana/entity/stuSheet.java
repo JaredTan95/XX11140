@@ -7,7 +7,7 @@ package cn.tanjianff.sheetsmana.entity;
  */
 
 public class stuSheet {
-    private String icon;//头像
+    private byte[] icon;//头像
     private String std_id;//学号
     private String std_name;//姓名
     private String std_className;//班级
@@ -16,7 +16,8 @@ public class stuSheet {
 
     }
 
-    public stuSheet(String icon, String std_id, String std_name, String std_className, String caseSelection) {
+    /*注意:传入图像时应该传入将Bitmap装换成byte字节的自己流*/
+    public stuSheet(byte[] icon, String std_id, String std_name, String std_className, String caseSelection) {
         this.icon = icon;
         this.std_id = std_id;
         this.std_name = std_name;
@@ -24,7 +25,7 @@ public class stuSheet {
         this.caseSelection = caseSelection;
     }
 
-    public void setIcon(String icon) {
+    public void setIcon(byte[] icon) {
         this.icon = icon;
     }
 
@@ -44,7 +45,7 @@ public class stuSheet {
         this.caseSelection = caseSelection;
     }
 
-    public String getIcon() {
+    public byte[] getIcon() {
         return icon;
     }
 

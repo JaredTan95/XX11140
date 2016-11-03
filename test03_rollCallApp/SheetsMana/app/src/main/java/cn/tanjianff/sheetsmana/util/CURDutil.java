@@ -40,17 +40,34 @@ public class CURDutil {
             }
             db.setTransactionSuccessful();//设置事务成功完成
         } catch (Exception e) {
-            Toast.makeText(context, e.toString(), Toast.LENGTH_LONG);//通知显示异常
+            //Toast.makeText(context, e.toString(), Toast.LENGTH_LONG);//通知显示异常
         } finally {
             db.endTransaction();//结束事务
-            Toast.makeText(context,"添加成功",Toast.LENGTH_LONG);
+            //Toast.makeText(context,"添加成功",Toast.LENGTH_LONG);
+        }
+    }
+
+    public boolean addOneItem(stuSheet student){
+        db.beginTransaction();
+        boolean isfinished=false;
+        try{
+            db.execSQL("INSERT INTO stuSheet VALUES (null,?,?,?,?,?)"
+                    , new Object[]{student.getIcon(), student.getStd_id(), student.getStd_name()
+                            ,student.getStd_className(),student.getCaseSelection()});
+            db.setTransactionSuccessful();//设置事务成功完成
+            isfinished=true;
+        }catch (Exception e){
+            isfinished=false;
+        }finally {
+            db.endTransaction();//结束事务
+            return isfinished;
         }
     }
 
     public void updateIcon(stuSheet student) {
         ContentValues cv = new ContentValues();
         cv.put("icon", student.getIcon());
-        db.update("student", cv, "icon=?", new String[]{student.getIcon()});
+        db.update("student", cv, "icon=?", new String[]{String.valueOf(student.getIcon())});
     }
 
     public void updatecaseSelection(){
@@ -67,7 +84,7 @@ public class CURDutil {
         Cursor c = queryTheCursor();
         while (c.moveToNext()) {
             stuSheet student = new stuSheet();
-            student.setIcon(c.getString(c.getColumnIndex("icon")));
+            student.setIcon(c.getBlob(c.getColumnIndex("icon")));
             student.setStd_id(c.getString(c.getColumnIndex("std_id")));
             student.setStd_name(c.getString(c.getColumnIndex("std_name")));
             student.setStd_className(c.getString(c.getColumnIndex("std_className")));
@@ -88,7 +105,9 @@ public class CURDutil {
         Cursor c=db.rawQuery("SELECT * FROM stuSheet WHERE id=?",new String[]{std.getStd_id()});
         while (c.move(0)){
             stuSheet student = new stuSheet();
-            student.setIcon(c.getString(c.getColumnIndex("icon")));
+            ImagBiStorage imagBiStorage=new ImagBiStorage(context);
+            byte[] bytes=c.getBlob(c.getColumnIndex("icon"));
+            student.setIcon((bytes));
             student.setStd_id(c.getString(c.getColumnIndex("std_id")));
             student.setStd_name(c.getString(c.getColumnIndex("std_name")));
             student.setStd_className(c.getString(c.getColumnIndex("std_className")));
