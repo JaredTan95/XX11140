@@ -1,5 +1,6 @@
 package cn.tanjianff.sheetsmana;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -7,6 +8,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -102,6 +104,8 @@ public class AddItemActivity extends AppCompatActivity {
                 progressBar.setBackgroundColor(Color.RED);
                 Toast.makeText(context,"Fail",Toast.LENGTH_LONG).show();
             }
+            Intent intent=new Intent(AddItemActivity.this,MainActivity.class);
+            startActivity(intent);
         }
     }
 

@@ -8,6 +8,8 @@ import android.graphics.drawable.Drawable;
 
 import java.io.ByteArrayOutputStream;
 
+import cn.tanjianff.sheetsmana.R;
+
 /**
  * Created by tanjian on 16/11/3.
  * 该类主要完成图片的Bitmap与byte[]二进制之间的转换,以此方便图片在SQLite中的存取
@@ -33,6 +35,11 @@ public class ImagBiStorage {
 
     //获取存入数据库的图片（Bitmap）,需传入图片二进制流
     public Bitmap getBitmap(byte[] img){
+        if(img==null){
+            Bitmap bitmap = ((BitmapDrawable) context.getResources().getDrawable(R.drawable.ic_icon)).getBitmap();
+            byte[] bytes=new ImagBiStorage(context).Img2Byte(bitmap);
+            img=bytes;
+        }
         return BitmapFactory.decodeByteArray(img, 0, img.length);
     }
 

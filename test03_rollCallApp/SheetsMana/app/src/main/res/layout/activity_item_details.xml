@@ -77,12 +77,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
+                    android:background="#f5f3f3"
                     android:text="取消"/>
                 <Button
                     android:id="@+id/saveEdit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:background="#f5f3f3"
                     android:text="保存并返回"/>
             </RelativeLayout>
         </LinearLayout>

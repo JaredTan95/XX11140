@@ -100,14 +100,14 @@ public class CURDutil {
         return c;
     }
 
-    public List<stuSheet> queryComment(stuSheet std){
+    public List<stuSheet> queryComment(int id){
         ArrayList<stuSheet> stuSheets=new ArrayList<>();
-        Cursor c=db.rawQuery("SELECT * FROM stuSheet WHERE id=?",new String[]{std.getStd_id()});
-        while (c.move(0)){
+        String idstr=String.valueOf(id);
+        Cursor c=db.rawQuery("SELECT * FROM stuSheet WHERE ID=?",new String[]{idstr});
+        while (c.isFirst()){
             stuSheet student = new stuSheet();
-            ImagBiStorage imagBiStorage=new ImagBiStorage(context);
             byte[] bytes=c.getBlob(c.getColumnIndex("icon"));
-            student.setIcon((bytes));
+            student.setIcon(bytes);
             student.setStd_id(c.getString(c.getColumnIndex("std_id")));
             student.setStd_name(c.getString(c.getColumnIndex("std_name")));
             student.setStd_className(c.getString(c.getColumnIndex("std_className")));

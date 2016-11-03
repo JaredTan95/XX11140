@@ -22,6 +22,7 @@
         <cn.tanjianff.sheetsmana.util.CircleImageView
             android:layout_gravity="center_vertical"
             android:id="@+id/ic_std_head"
+            android:layout_marginLeft="5dp"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:paddingTop="6dp"

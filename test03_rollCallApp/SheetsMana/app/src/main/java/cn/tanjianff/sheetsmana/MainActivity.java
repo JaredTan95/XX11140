@@ -19,7 +19,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private CURDutil curdUtil;
     private ListView listview;
+    private static boolean isEmpty=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,44 +62,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
- /*
-
-        int [] orderNum=new int[]{1,2,3};
-        int[] head_icon = new int[]{R.mipmap.wgp, R.mipmap.wgp, R.mipmap.wgp};
-        String[] sid=new String[]{"631406010102","631406010103","631406010104"};
-        String[] list_items_names = {"莫天金", "吴国平", "孙文斌"};
-        *//*, "潘俊旭", "石佳磊", "赵权",
-                "马鹏", "郭文浩", "李季", "陈仕豪", "杜菲", "李红兵", "蔡佳辰", "肖洒益",
-                "伍凯荣", "张林", "王斌", "廖宇峰", "谭建", "左永和", "王增辉", "任中豪",
-                "何泳桦", "张力", "任达"*//*
-        String[] className = new String[]{"计科1401班", "计科1401班", "计科1401班"};
-
-        List<Map<String,Object>> listItems=new ArrayList<Map<String,Object>>();
-        for(int i=0;i<list_items_names.length;i++){
-            Map<String,Object> showItems=new HashMap<String,Object>();
-            showItems.put("orderNum",orderNum[i]);
-            showItems.put("head_icon",head_icon[i]);
-            showItems.put("sid",sid[i]);
-            showItems.put("list_items_names",list_items_names[i]);
-            showItems.put("className",className[i]);
-            listItems.add(showItems);
-        }
-
-        //创建一个SimpleAdapter
-        SimpleAdapter simpleAdapter=new SimpleAdapter(getApplicationContext(),listItems,
-                R.layout.list_item,
-                new String[]{"orderNum","head_icon","sid","list_items_names","className"},
-                new int[]{R.id.orderNum,R.id.ic_std_head,R.id.std_id,R.id.std_name,R.id.className});
-
-
-
-        listview.setAdapter(simpleAdapter);
-        */
-
-        testAddData();//添加演示数据
+        //testAddData();//添加演示数据
         /*此处数据将从SQLite数据库中获取*/
         //查询数据库里的数据
         query();
+
         //为每一个item绑定点击事件
         listview.setOnItemClickListener(this);
     }
@@ -117,8 +84,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-
-
 
             return true;
         }
@@ -141,6 +106,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void query() {
         List<stuSheet> students = curdUtil.query();
+        if(students!=null){
+            isEmpty=false;
+        }
         List<Map<String, Object>> listItems = new ArrayList<>();
         int i=0;
         ImagBiStorage imagBiStorage=new ImagBiStorage(this);
@@ -194,7 +162,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         curdUtil.closeDB();
     }
 
-
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+    }
 
     /*重写SimpleAdapter,以此实现图片适配的问题,因为SimpleAdapter不能对图片进行适配,重写即可*/
     class SimpleAdapter extends android.widget.SimpleAdapter {
@@ -287,6 +258,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             v.setImageDrawable(value);
         }
     }
-
 
 }

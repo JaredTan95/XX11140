@@ -32,18 +32,19 @@ public class itemDetailsActivity extends AppCompatActivity {
     private EditText editText_name;
     private EditText editText_id;
     private ImageView icon;
-    private CheckBox [] checkBoxes=new CheckBox[5];
+    private CheckBox[] checkBoxes = new CheckBox[5];
     private Button cancel;
     private Button save;
-    private static int [] checkboxIds=new int[]{R.id.case1,R.id.case2,R.id.case3,R.id.case4,R.id.case5};
+    private static int[] checkboxIds = new int[]{R.id.case1, R.id.case2, R.id.case3, R.id.case4, R.id.case5};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_details);
-        editText_name= (EditText) findViewById(R.id.setName);
-        editText_id= (EditText) findViewById(R.id.set_StdId);
-        cancel=(Button)findViewById(R.id.cancelEdit);
-        icon= (ImageView) findViewById(R.id.setIcon);
+        editText_name = (EditText) findViewById(R.id.setName);
+        editText_id = (EditText) findViewById(R.id.set_StdId);
+        cancel = (Button) findViewById(R.id.cancelEdit);
+        icon = (ImageView) findViewById(R.id.setIcon);
         icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,52 +58,38 @@ public class itemDetailsActivity extends AppCompatActivity {
                 itemDetailsActivity.this.finish();
             }
         });
-        save= (Button) findViewById(R.id.saveEdit);
+        save = (Button) findViewById(R.id.saveEdit);
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String stu_id=editText_id.getText().toString();
-                stuSheet stu=new stuSheet();
+                String stu_id = editText_id.getText().toString();
+                stuSheet stu = new stuSheet();
                 stu.setStd_id(stu_id);
-                Toast.makeText(itemDetailsActivity.this,"正在保存更改...",Toast.LENGTH_SHORT);
+                Toast.makeText(itemDetailsActivity.this, "正在保存更改...", Toast.LENGTH_SHORT);
             }
         });
-        icon= (ImageView) findViewById(R.id.setIcon);
-        for (int i=0;i<checkBoxes.length;i++){
-            checkBoxes[i]= (CheckBox) findViewById(checkboxIds[i]);
-        }
-        Intent intent=getIntent();
-        int position=0;
-        intent.getIntExtra("clickItemOrder",position);
-        /*CURDutil queryCollection=new CURDutil(getApplicationContext());
-        ArrayList<stuSheet> collections=new ArrayList<> ();
-        String strpos=String.valueOf(position);
-        collections.addAll(queryCollection.queryComment(strpos));
-        editText_id.setText(intent.getIntExtra("clickItemOrder",position));
-
-        if(!collections.isEmpty()){
+        icon = (ImageView) findViewById(R.id.setIcon);
+        Intent intent = getIntent();
+        int position = 0;
+        intent.getIntExtra("clickItemOrder", position);
+        CURDutil queryCollection = new CURDutil(getApplicationContext());
+        ArrayList<stuSheet> collections = new ArrayList<>();
+        //collections.addAll(queryCollection.queryComment(position));
+        //editText_id.setText(intent.getIntExtra("clickItemOrder",position));
+       /* if(!collections.isEmpty()){
             stuSheet current=collections.get(0);
-            String state[]=new String[5];
-            for(int i=0;i<state.length;i++){
-                if(state[i]!=null){
-                    checkBoxes[i].setEnabled(true);
-                }
-                else {
-                    checkBoxes[i].setEnabled(false);
-                }
-            }
-            icon.setImageURI(Uri.parse(current.getIcon()));
+            icon.setImageBitmap(new ImagBiStorage(getApplicationContext()).getBitmap(current.getIcon()));
             editText_name.setText(current.getStd_name());
-            editText_id.setText(current.getStd_id());
-        }*/
+            editText_id.setText(current.getStd_id());}*/
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             iconBitmap = (Bitmap) extras.get("data");
-            imgbytes=new ImagBiStorage(getApplicationContext()).Img2Byte(iconBitmap);
+            imgbytes = new ImagBiStorage(getApplicationContext()).Img2Byte(iconBitmap);
             icon.setImageBitmap(iconBitmap);
         }
     }
