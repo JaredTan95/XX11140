@@ -2,27 +2,37 @@ package cn.tanjianff.sheetsmana.entity;
 
 /**
  * Created by tanjian on 16/10/27.
- *
  * 花名册的实体
  */
 
 public class stuSheet {
+    private String ID;
     private byte[] icon;//头像
     private String std_id;//学号
     private String std_name;//姓名
     private String std_className;//班级
     private String caseSelection;//考勤
-    public stuSheet(){
+
+    public stuSheet() {
 
     }
 
     /*注意:传入图像时应该传入将Bitmap装换成byte字节的自己流*/
-    public stuSheet(byte[] icon, String std_id, String std_name, String std_className, String caseSelection) {
+    public stuSheet(String id, byte[] icon, String std_id, String std_name, String std_className, String caseSelection) {
+        this.ID = id;
         this.icon = icon;
         this.std_id = std_id;
         this.std_name = std_name;
         this.std_className = std_className;
         this.caseSelection = caseSelection;
+    }
+
+    public void setID(String id) {
+        this.ID = id;
+    }
+
+    public String getID() {
+        return this.ID;
     }
 
     public void setIcon(byte[] icon) {

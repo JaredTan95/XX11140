@@ -84,6 +84,7 @@ public class CURDutil {
         Cursor c = queryTheCursor();
         while (c.moveToNext()) {
             stuSheet student = new stuSheet();
+            student.setID(c.getString(c.getColumnIndex("ID")));
             student.setIcon(c.getBlob(c.getColumnIndex("icon")));
             student.setStd_id(c.getString(c.getColumnIndex("std_id")));
             student.setStd_name(c.getString(c.getColumnIndex("std_name")));
@@ -107,6 +108,7 @@ public class CURDutil {
         while (c.isFirst()){
             stuSheet student = new stuSheet();
             byte[] bytes=c.getBlob(c.getColumnIndex("icon"));
+            student.setID(c.getString(c.getColumnIndex("ID")));
             student.setIcon(bytes);
             student.setStd_id(c.getString(c.getColumnIndex("std_id")));
             student.setStd_name(c.getString(c.getColumnIndex("std_name")));

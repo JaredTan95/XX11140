@@ -13,14 +13,6 @@
     android:paddingTop="0dp"
     tools:context="cn.tanjianff.sheetsmana.AddItemActivity">
 
-    <ProgressBar
-        android:id="@+id/progressBar_horizontal"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_marginTop="0dp"
-        android:layout_height="5dp"
-        android:max="100"/>
-
     <!--由于ScrollView内部只能有一个子元素，即不能并列两个子元素，所以需要把所有的子
         元素放到一个LinearLayout内部或RelativeLayout等其他布局方式。-->
     <ScrollView

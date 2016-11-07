@@ -1,21 +1,28 @@
 package cn.tanjianff.sheetsmana.util;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
-import jxl.*;
-
-import java.io.*;
-
+import cn.tanjianff.sheetsmana.entity.stuSheet;
+import jxl.Sheet;
+import jxl.Workbook;
 import jxl.read.biff.BiffException;
-import jxl.write.*;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
 /**
  * Created by tanjian on 16/10/31.
+ * 该类实现导入导出Excel的方法
  */
 
 public class jExcel {
 
-    public static String readExcelTable(String filePath) throws IOException, BiffException {
+    private static ArrayList<stuSheet> resultList;
 
-        StringBuffer sb=new StringBuffer();
+    public static ArrayList<stuSheet> readExcelTable(String filePath) throws IOException, BiffException {
+
         //读取test.xls文件
         Workbook book = Workbook.getWorkbook(new File(filePath));
 
@@ -26,19 +33,29 @@ public class jExcel {
         int rows = sheet.getRows();
         int cols = sheet.getColumns();
 
-        System.out.println("总列数：" + cols);
-        System.out.println("总行数:" + rows);
-        System.out.println("----------------------------");
-
-        int i = 0;
-        int j = 0;
-        //循环读取数据
-        for (i = 0; i < rows; i++) {
-            for (j = 0; j < cols; j++) {
-                sb.append(sheet.getCell(j, i).getContents());
-            }
+        //格式化数据,将其与数据库字段对应
+       try{
+           resultList=new ArrayList<>();
+           for (int i = 0; i < rows; i++) {
+               stuSheet item=new stuSheet();
+               byte[] bytes=new byte[]{};
+               int j = 0;
+               while (j<cols){
+                   item.setID("");
+                   item.setIcon(bytes);//图片采用默认的
+                   item.setStd_id(sheet.getCell(++j, i).getContents());
+                   item.setStd_name(sheet.getCell(++j, i).getContents());
+                   item.setStd_className(sheet.getCell(++j, i).getContents());
+                   item.setCaseSelection("0,0,0,0,0");
+                   j=0;
+               }
+               System.out.println(item.getStd_id()+" "+item.getStd_name()+" "+item.getStd_className());
+               resultList.add(item);
+           }
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        return sb.toString();
+        return resultList;
     }
 
 

@@ -1,5 +1,6 @@
 package cn.tanjianff.sheetsmana;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private CURDutil curdUtil;
     private ListView listview;
+    private static SimpleAdapter simpleAdapter;
     private static boolean isEmpty=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         .setActionTextColor(Color.WHITE).show();
             }
         });
+
+
 
         //testAddData();//添加演示数据
         /*此处数据将从SQLite数据库中获取*/
@@ -97,10 +102,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent=new Intent();
+        Adapter adapter=parent.getAdapter();
+        Map<String,String> map=(Map<String, String>) adapter.getItem(position);
+
+        Toast.makeText(getApplicationContext(),map.get("std_name"),Toast.LENGTH_LONG).show();
+
+
+    /*    Intent intent=new Intent();
         intent.setClass(MainActivity.this,itemDetailsActivity.class);
         intent.putExtra("clickItemOrder",(position+1));
-        MainActivity.this.startActivity(intent);
+        MainActivity.this.startActivity(intent);*/
         Toast.makeText(MainActivity.this,"你点击了第" + (position+1) + "项",Toast.LENGTH_SHORT).show();
     }
 
@@ -110,11 +121,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             isEmpty=false;
         }
         List<Map<String, Object>> listItems = new ArrayList<>();
-        int i=0;
         ImagBiStorage imagBiStorage=new ImagBiStorage(this);
         for (stuSheet std : students) {
             Map<String,Object> showItems= new HashMap<>();
-            showItems.put("orderNum",++i);
+            showItems.put("orderNum",std.getID());
             //将位图转换成资源文件
             showItems.put("head_icon",Bitmap2drawable(imagBiStorage.getBitmap(std.getIcon())));
             showItems.put("sid",std.getStd_id());
@@ -123,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             listItems.add(showItems);
         }
         //创建一个SimpleAdapter
-        SimpleAdapter simpleAdapter=new SimpleAdapter(getApplicationContext(),listItems,
+        simpleAdapter=new SimpleAdapter(getApplicationContext(),listItems,
                 R.layout.list_item,
                 new String[]{"orderNum","head_icon","sid","list_items_names","className"},
                 new int[]{R.id.orderNum,R.id.ic_std_head,R.id.std_id,R.id.std_name,R.id.className});
@@ -132,13 +142,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void testAddData(){
         ArrayList<stuSheet> students = new ArrayList<stuSheet>();
-        Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_launcher)).getBitmap();
+        Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(R.drawable.ic_icon)).getBitmap();
         byte[] bytes=new ImagBiStorage(getApplicationContext()).Img2Byte(bitmap);
-        stuSheet std1 = new stuSheet(bytes, "631406010122", "Jenny", "计科一班","11100");
-        stuSheet std2 = new stuSheet(bytes, "631406010123", "Jessica", "计科一班","11000");
-        stuSheet std3 = new stuSheet(bytes, "631406010124", "sexy girl", "计科一班","00000");
-        stuSheet std4 = new stuSheet(bytes, "631406010125", "Kelly", "计科一班","01011");
-        stuSheet std5 = new stuSheet(bytes, "631406010126", "Jane", "计科一班","11111");
+        stuSheet std1 = new stuSheet("",bytes, "631406010122", "Jenny", "计科一班","11100");
+        stuSheet std2 = new stuSheet("",bytes, "631406010123", "Jessica", "计科一班","11000");
+        stuSheet std3 = new stuSheet("",bytes, "631406010124", "sexy girl", "计科一班","00000");
+        stuSheet std4 = new stuSheet("",bytes, "631406010125", "Kelly", "计科一班","01011");
+        stuSheet std5 = new stuSheet("",bytes, "631406010126", "Jane", "计科一班","11111");
         students.add(std1);
         students.add(std2);
         students.add(std3);
@@ -165,6 +175,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onRestart() {
         super.onRestart();
+        Toast.makeText(getApplicationContext(),"Reloading...",Toast.LENGTH_SHORT).show();
+        //重新加载数据
+        simpleAdapter.notifyDataSetChanged();
+        query();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == Activity.RESULT_OK) {
+            //如果resultCode是RESULT_OK的话，就把内容重新加载显示出来。
+            onRestart();
+        }
+
+
     }
 
     /*重写SimpleAdapter,以此实现图片适配的问题,因为SimpleAdapter不能对图片进行适配,重写即可*/
