@@ -102,17 +102,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Adapter adapter=parent.getAdapter();
-        Map<String,String> map=(Map<String, String>) adapter.getItem(position);
+        //Adapter adapter=parent.getAdapter();
+        //Map<String,String> map=(Map<String, String>) adapter.getItem(position);
 
-        Toast.makeText(getApplicationContext(),map.get("std_name"),Toast.LENGTH_LONG).show();
-
-
-    /*    Intent intent=new Intent();
+        //Toast.makeText(getApplicationContext(),map.get("std_name"),Toast.LENGTH_LONG).show();
+        Intent intent=new Intent();
         intent.setClass(MainActivity.this,itemDetailsActivity.class);
-        intent.putExtra("clickItemOrder",(position+1));
-        MainActivity.this.startActivity(intent);*/
-        Toast.makeText(MainActivity.this,"你点击了第" + (position+1) + "项",Toast.LENGTH_SHORT).show();
+        String pos=String.valueOf(position+1);
+        intent.putExtra("clickItemOrder",pos);
+        MainActivity.this.startActivity(intent);
+        //Toast.makeText(MainActivity.this,"你点击了第" + (position+1) + "项",Toast.LENGTH_SHORT).show();
     }
 
     public void query() {

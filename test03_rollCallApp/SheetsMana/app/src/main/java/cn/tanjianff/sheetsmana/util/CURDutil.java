@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import cn.tanjianff.sheetsmana.entity.stuSheet;
@@ -40,10 +41,9 @@ public class CURDutil {
             }
             db.setTransactionSuccessful();//设置事务成功完成
         } catch (Exception e) {
-            //Toast.makeText(context, e.toString(), Toast.LENGTH_LONG);//通知显示异常
+
         } finally {
             db.endTransaction();//结束事务
-            //Toast.makeText(context,"添加成功",Toast.LENGTH_LONG);
         }
     }
 
@@ -64,21 +64,6 @@ public class CURDutil {
         }
     }
 
-    public void updateIcon(stuSheet student) {
-        ContentValues cv = new ContentValues();
-        cv.put("icon", student.getIcon());
-        db.update("student", cv, "icon=?", new String[]{String.valueOf(student.getIcon())});
-    }
-
-    public void updatecaseSelection(){
-
-    }
-
-    public void updatecaseSelection(stuSheet student){
-        ContentValues cv = new ContentValues();
-        cv.put("case",student.getCaseSelection());
-        db.update("student", cv,"caseSelection=?",new String[]{student.getCaseSelection()});
-    }
     public List<stuSheet> query() {
         ArrayList<stuSheet> stuSheets = new ArrayList<>();
         Cursor c = queryTheCursor();
@@ -96,28 +81,45 @@ public class CURDutil {
         return stuSheets;
     }
 
-    public Cursor queryTheCursor() {
-        Cursor c = db.rawQuery("SELECT * FROM stuSheet", null);
-        return c;
-    }
-
-    public List<stuSheet> queryComment(int id){
-        ArrayList<stuSheet> stuSheets=new ArrayList<>();
-        String idstr=String.valueOf(id);
-        Cursor c=db.rawQuery("SELECT * FROM stuSheet WHERE ID=?",new String[]{idstr});
-        while (c.isFirst()){
-            stuSheet student = new stuSheet();
-            byte[] bytes=c.getBlob(c.getColumnIndex("icon"));
+    /**
+     * 根据ID主键查询学生的记录
+     * @Params id,学生主键
+     * @Parama stuSheet,学生实体对象
+     * */
+    public stuSheet queryById(String id){
+        stuSheet student=new stuSheet();
+        Cursor c=db.rawQuery("SELECT * FROM stuSheet where ID=?",new String[]{id});
+        while (c.moveToNext()){
             student.setID(c.getString(c.getColumnIndex("ID")));
-            student.setIcon(bytes);
+            student.setIcon(c.getBlob(c.getColumnIndex("icon")));
             student.setStd_id(c.getString(c.getColumnIndex("std_id")));
             student.setStd_name(c.getString(c.getColumnIndex("std_name")));
             student.setStd_className(c.getString(c.getColumnIndex("std_className")));
             student.setCaseSelection(c.getString(c.getColumnIndex("caseSelection")));
-            stuSheets.add(student);
         }
         c.close();
-        return stuSheets;
+        return student;
+    }
+
+    public boolean updateStuSheetItem(stuSheet item) {
+        boolean isfinished;
+        db.beginTransaction();//开始事务
+        try {
+            db.execSQL("UPDATE stuSheet SET icon = ?,std_id=?,std_name=?, std_className=?,caseSelection=? "
+                    + "WHERE ID = ?;", new String[]{Arrays.toString(item.getIcon()), item.getStd_id(),
+                    item.getStd_name(), item.getCaseSelection(), item.getID()});
+            db.setTransactionSuccessful();//设置事务成功完成
+            isfinished = true;
+        } catch (Exception e) {
+            isfinished = false;
+        }
+        db.endTransaction();//结束事务
+        return isfinished;
+    }
+
+    public Cursor queryTheCursor() {
+        Cursor c = db.rawQuery("SELECT * FROM stuSheet", null);
+        return c;
     }
 
     //释放数据库资源
