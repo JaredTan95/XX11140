@@ -1,5 +1,7 @@
 package cn.tanjianff.sheetsmana.entity;
 
+import cn.tanjianff.sheetsmana.util.ImagBiStorage;
+
 /**
  * Created by tanjian on 16/10/27.
  * 花名册的实体
@@ -60,14 +62,7 @@ public class stuSheet {
     }
 
     public String getIconString(){
-        byte[] bytes=getIcon();
-        StringBuilder sbIcon=new StringBuilder();
-        if(bytes!=null){
-            for(int i=0;i<bytes.length;i++){
-                sbIcon.append(bytes[i]);
-            }
-        }
-        return  sbIcon.toString();
+       return ImagBiStorage.byte2String(getIcon());
     }
 
     public String getStd_id() {

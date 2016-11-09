@@ -12,6 +12,7 @@
     tools:context="cn.tanjianff.sheetsmana.itemDetailsActivity"
     android:orientation="vertical">
 
+
     <!--由于ScrollView内部只能有一个子元素，即不能并列两个子元素，所以需要把所有的子
         元素放到一个LinearLayout内部或RelativeLayout等其他布局方式。-->
     <ScrollView
@@ -87,6 +88,16 @@
                     android:background="#f5f3f3"
                     android:text="保存并返回"/>
             </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="删除"
+                android:textSize="24sp"
+                android:textColor="#ea4c4c"
+                android:background="#e9e7e7"/>
         </LinearLayout>
     </ScrollView>
 

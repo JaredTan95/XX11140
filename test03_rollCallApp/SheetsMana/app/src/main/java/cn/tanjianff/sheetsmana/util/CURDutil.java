@@ -105,27 +105,30 @@ public class CURDutil {
     public boolean updateById(stuSheet item) {
         boolean isfinished;
         try {
-            /*db.execSQL("UPDATE stuSheet SET icon= ?,std_id=?,std_name=?, std_className=?,caseSelection=? WHERE ID= ?;"
-                    , new Object[]{item.getIcon(), item.getStd_id(),
-                            item.getStd_name(), item.getStd_className(), item.getCaseSelection(), item.getID()});*/
-
-            db.execSQL("UPDATE stuSheet SET icon='"+ item.getIcon() +"',std_id='"+item.getStd_id()
-                    +"',std_name='"+item.getStd_name() +"',caseSelection='"+item.getCaseSelection()+"' WHERE ID= '"+item.getID()+"';");
-
-          /*  ContentValues values = new ContentValues();
+            ContentValues values = new ContentValues();
             //key为字段名，value为值
             values.put("icon",item.getIcon());
             values.put("std_id",item.getStd_id());
             values.put("std_name",item.getStd_name());
-            values.put("std_className",item.getStd_className());
             values.put("caseSelection",item.getCaseSelection());
-            //String table, ContentValues values, String whereClause, String[] whereArgs
-            db.update("stuSheet", values, "ID=?", new String[]{item.getID()});*/
+            //@Params:String table, ContentValues values, String whereClause, String[] whereArgs
+            db.update("stuSheet", values, "ID=?", new String[]{item.getID()});
             isfinished = true;
         } catch (Exception e) {
             isfinished = false;
         }
         return isfinished;
+    }
+
+    public boolean delateById(String itemId){
+        boolean delfinished;
+        try{
+            db.execSQL("DELETE FROM stuSheet WHERE ID='"+itemId+"';");
+            delfinished=true;
+        } catch (Exception e){
+            delfinished=false;
+        }
+        return delfinished;
     }
 
     public Cursor queryTheCursor() {

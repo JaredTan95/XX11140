@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 //TODO:添加导入数据的操作
-                Snackbar.make(view, "Snack Bar Text", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "你可以导入Excel文件.", Snackbar.LENGTH_LONG)
                         .setAction("I/OExcel", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
@@ -113,18 +113,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         intent.putExtra("clickItemOrder",pos);
         MainActivity.this.startActivity(intent);
         //Toast.makeText(MainActivity.this,"你点击了第" + (position+1) + "项",Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        //menu.add(0,1,"Delete",);
-        //TODO:长按Item选择删除该Item
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        return super.onContextItemSelected(item);
     }
 
     public void query() {

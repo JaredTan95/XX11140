@@ -73,4 +73,28 @@ public class ImagBiStorage {
         BitmapDrawable bd = new BitmapDrawable(context.getResources(), bm);
         return bd;
     }
+
+    public static String byte2String(byte[] bytes) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < bytes.length; i++) {
+            int tmp = bytes[i] & 0XFF;
+            String str = Integer.toHexString(tmp);
+            if (str.length() == 1) {
+                sb.append("0" + str);
+            } else {
+                sb.append(str);
+            }
+        }
+        return sb.toString();
+    }
+
+    public static byte[] String2byte(String str) {
+        byte[] result = new byte[str.length() / 2];
+        int index = 0;
+        for (int i = 0; i < str.length(); i += 2) {
+            result[index++] = (byte) Integer.parseInt(str.substring(i, i + 2),
+                    16);
+        }
+        return result;
+    }
 }

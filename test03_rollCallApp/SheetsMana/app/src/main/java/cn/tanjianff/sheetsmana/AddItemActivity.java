@@ -1,5 +1,8 @@
 package cn.tanjianff.sheetsmana;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +36,7 @@ import static cn.tanjianff.sheetsmana.itemDetailsActivity.REQUEST_IMAGE_CAPTURE;
 
 public class AddItemActivity extends AppCompatActivity {
 
+    static View v_progress;
     static int[] ids;
     static ImageView v_icon;
     static EditText v_Edname;
@@ -226,7 +230,6 @@ public class AddItemActivity extends AppCompatActivity {
             popupWindow.setFocusable(true);
             popupWindow.setOutsideTouchable(true);
         }
-
         popupWindow.setContentView(view);
         popupWindow.showAtLocation(bt_select_cancle, Gravity.BOTTOM, 0, 0);
         popupWindow.update();
