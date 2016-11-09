@@ -3,6 +3,7 @@ package cn.tanjianff.sheetsmana;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.util.Arrays;
 
 import cn.tanjianff.sheetsmana.entity.stuSheet;
 import cn.tanjianff.sheetsmana.util.CURDutil;
@@ -22,7 +25,7 @@ public class itemDetailsActivity extends AppCompatActivity {
 
     private static String posStr;
     private static Bitmap iconBitmap;
-    private byte[] imgbytes;
+    private static byte[] imgbytes;
     private EditText editText_name;
     private EditText editText_id;
     private ImageView icon;
@@ -45,7 +48,12 @@ public class itemDetailsActivity extends AppCompatActivity {
         try {
             editText_id.setText(student.getStd_id());
             editText_name.setText(student.getStd_name());
-            icon.setImageBitmap(new ImagBiStorage(this).getBitmap(student.getIcon()));
+            ImagBiStorage imagBiStorage=new ImagBiStorage(getApplicationContext());
+            iconBitmap=imagBiStorage.getBitmap(student.getIcon());
+            if(iconBitmap!=null){
+                imgbytes=imagBiStorage.Img2Byte(iconBitmap);
+                icon.setImageBitmap(iconBitmap);
+            }
             String[] caseStrArray = student.getCaseSelection().split(",");
             for (int i = 0; i < checkboxIds.length; i++) {
                 //此处界限应该以checkBox[]的长度为准,避免异常
@@ -56,6 +64,7 @@ public class itemDetailsActivity extends AppCompatActivity {
                 }
             }
         } catch (Exception e) {
+            e.printStackTrace();
             Toast.makeText(this, "查询数据失败!", Toast.LENGTH_SHORT).show();
         }
 
@@ -75,7 +84,7 @@ public class itemDetailsActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SubmitSaveEvent();
+               SubmitSaveEvent();
             }
         });
     }
@@ -107,13 +116,16 @@ public class itemDetailsActivity extends AppCompatActivity {
             stuSheet stu = new stuSheet();
             stu.setID(posStr);
 
-            ImagBiStorage imagBiStorage = new ImagBiStorage(getApplicationContext());
-            Bitmap bitmap = imagBiStorage.drawable2Bitmap(icon.getDrawable());
-            stu.setIcon(imagBiStorage.Img2Byte(bitmap));
-
+           // ImagBiStorage imagBiStorage = new ImagBiStorage(getApplicationContext());
+         /*   icon.setDrawingCacheEnabled(true);
+            Bitmap bitmap = imagBiStorage.drawable2Bitmap(icon.getBackground());
+            icon.setDrawingCacheEnabled(false);*/
+            stu.setIcon(imgbytes);
             stu.setStd_name(editText_name.getText().toString());
             stu.setStd_id(editText_id.getText().toString());
             StringBuilder toAddCase = new StringBuilder();
+
+            //字符串拼接,将修改后的考勤状态存入数据库
             for (int i = 0; i < checkBoxes.length; i++) {
                 if (checkBoxes[i].isChecked()) {
                     if (i == 0) {
@@ -131,13 +143,13 @@ public class itemDetailsActivity extends AppCompatActivity {
                 }
             }
             stu.setCaseSelection(toAddCase.toString());
-            if (new CURDutil(getApplicationContext()).updateStuSheetItem(stu)) {
+            if (new CURDutil(getApplicationContext()).updateById(stu)) {
                 finish();
-            } else {
-                Toast.makeText(getApplicationContext(), "修改失败_01!", Toast.LENGTH_SHORT).show();
+            } else{
+                Toast.makeText(getApplicationContext(),"修改失败,操作!", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "修改失败!_02", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "修改失败,异常!", Toast.LENGTH_SHORT).show();
         }
     }
 

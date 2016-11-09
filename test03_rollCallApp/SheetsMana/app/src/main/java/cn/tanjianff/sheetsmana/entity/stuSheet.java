@@ -59,6 +59,17 @@ public class stuSheet {
         return icon;
     }
 
+    public String getIconString(){
+        byte[] bytes=getIcon();
+        StringBuilder sbIcon=new StringBuilder();
+        if(bytes!=null){
+            for(int i=0;i<bytes.length;i++){
+                sbIcon.append(bytes[i]);
+            }
+        }
+        return  sbIcon.toString();
+    }
+
     public String getStd_id() {
         return std_id;
     }

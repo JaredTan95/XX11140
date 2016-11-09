@@ -40,7 +40,7 @@ public class jExcel {
                 stuSheet item = new stuSheet();
                 int j = 1;
                 item.setID("");
-                item.setIcon(null);//图片采用默认的
+                //item.setIcon();//图片采用默认的
                 item.setStd_id(sheet.getCell(j++, i).getContents().trim());
                 item.setStd_name(sheet.getCell(j++, i).getContents());
                 item.setStd_className(sheet.getCell(j, i).getContents());

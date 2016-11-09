@@ -37,7 +37,7 @@ public class CURDutil {
             for (stuSheet item : sheets) {
                 db.execSQL("INSERT INTO stuSheet VALUES (null,?,?,?,?,?)"
                         , new Object[]{item.getIcon(), item.getStd_id(), item.getStd_name()
-                                ,item.getStd_className(),item.getCaseSelection()});
+                                , item.getStd_className(), item.getCaseSelection()});
             }
             db.setTransactionSuccessful();//设置事务成功完成
         } catch (Exception e) {
@@ -47,18 +47,18 @@ public class CURDutil {
         }
     }
 
-    public boolean addOneItem(stuSheet student){
+    public boolean addOneItem(stuSheet student) {
         db.beginTransaction();
-        boolean isfinished=false;
-        try{
+        boolean isfinished = false;
+        try {
             db.execSQL("INSERT INTO stuSheet VALUES (null,?,?,?,?,?)"
                     , new Object[]{student.getIcon(), student.getStd_id(), student.getStd_name()
-                            ,student.getStd_className(),student.getCaseSelection()});
+                            , student.getStd_className(), student.getCaseSelection()});
             db.setTransactionSuccessful();//设置事务成功完成
-            isfinished=true;
-        }catch (Exception e){
-            isfinished=false;
-        }finally {
+            isfinished = true;
+        } catch (Exception e) {
+            isfinished = false;
+        } finally {
             db.endTransaction();//结束事务
             return isfinished;
         }
@@ -83,13 +83,14 @@ public class CURDutil {
 
     /**
      * 根据ID主键查询学生的记录
-     * @Params id,学生主键
-     * @Parama stuSheet,学生实体对象
-     * */
-    public stuSheet queryById(String id){
-        stuSheet student=new stuSheet();
-        Cursor c=db.rawQuery("SELECT * FROM stuSheet where ID=?",new String[]{id});
-        while (c.moveToNext()){
+     *
+     * @Params id, 学生主键
+     * @Parama stuSheet, 学生实体对象
+     */
+    public stuSheet queryById(String id) {
+        stuSheet student = new stuSheet();
+        Cursor c = db.rawQuery("SELECT * FROM stuSheet where ID=?", new String[]{id});
+        while (c.moveToNext()) {
             student.setID(c.getString(c.getColumnIndex("ID")));
             student.setIcon(c.getBlob(c.getColumnIndex("icon")));
             student.setStd_id(c.getString(c.getColumnIndex("std_id")));
@@ -101,19 +102,29 @@ public class CURDutil {
         return student;
     }
 
-    public boolean updateStuSheetItem(stuSheet item) {
+    public boolean updateById(stuSheet item) {
         boolean isfinished;
-        db.beginTransaction();//开始事务
         try {
-            db.execSQL("UPDATE stuSheet SET icon = ?,std_id=?,std_name=?, std_className=?,caseSelection=? "
-                    + "WHERE ID = ?;", new String[]{Arrays.toString(item.getIcon()), item.getStd_id(),
-                    item.getStd_name(),item.getStd_className(), item.getCaseSelection(), item.getID()});
-            db.setTransactionSuccessful();//设置事务成功完成
+            /*db.execSQL("UPDATE stuSheet SET icon= ?,std_id=?,std_name=?, std_className=?,caseSelection=? WHERE ID= ?;"
+                    , new Object[]{item.getIcon(), item.getStd_id(),
+                            item.getStd_name(), item.getStd_className(), item.getCaseSelection(), item.getID()});*/
+
+            db.execSQL("UPDATE stuSheet SET icon='"+ item.getIcon() +"',std_id='"+item.getStd_id()
+                    +"',std_name='"+item.getStd_name() +"',caseSelection='"+item.getCaseSelection()+"' WHERE ID= '"+item.getID()+"';");
+
+          /*  ContentValues values = new ContentValues();
+            //key为字段名，value为值
+            values.put("icon",item.getIcon());
+            values.put("std_id",item.getStd_id());
+            values.put("std_name",item.getStd_name());
+            values.put("std_className",item.getStd_className());
+            values.put("caseSelection",item.getCaseSelection());
+            //String table, ContentValues values, String whereClause, String[] whereArgs
+            db.update("stuSheet", values, "ID=?", new String[]{item.getID()});*/
             isfinished = true;
         } catch (Exception e) {
             isfinished = false;
         }
-        db.endTransaction();//结束事务
         return isfinished;
     }
 
