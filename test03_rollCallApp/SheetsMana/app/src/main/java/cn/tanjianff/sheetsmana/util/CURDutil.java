@@ -107,7 +107,7 @@ public class CURDutil {
         try {
             db.execSQL("UPDATE stuSheet SET icon = ?,std_id=?,std_name=?, std_className=?,caseSelection=? "
                     + "WHERE ID = ?;", new String[]{Arrays.toString(item.getIcon()), item.getStd_id(),
-                    item.getStd_name(), item.getCaseSelection(), item.getID()});
+                    item.getStd_name(),item.getStd_className(), item.getCaseSelection(), item.getID()});
             db.setTransactionSuccessful();//设置事务成功完成
             isfinished = true;
         } catch (Exception e) {

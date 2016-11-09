@@ -34,25 +34,23 @@ public class jExcel {
         int cols = sheet.getColumns();
 
         //格式化数据,将其与数据库字段对应
-       try{
-           resultList=new ArrayList<>();
-           for (int i = 0; i < rows; i++) {
-               stuSheet item=new stuSheet();
-               byte[] bytes=new byte[]{};
-               int j = 0;
-               while (j<cols){
-                   item.setID("");
-                   item.setIcon(bytes);//图片采用默认的
-                   item.setStd_id(sheet.getCell(++j, i).getContents());
-                   item.setStd_name(sheet.getCell(++j, i).getContents());
-                   item.setStd_className(sheet.getCell(++j, i).getContents());
-                   item.setCaseSelection("0,0,0,0,0");
-                   j=0;
-               }
-               System.out.println(item.getStd_id()+" "+item.getStd_name()+" "+item.getStd_className());
-               resultList.add(item);
-           }
-        }catch (Exception e){
+        try {
+            resultList = new ArrayList<>();
+            for (int i = 0; i < rows; i++) {
+                stuSheet item = new stuSheet();
+                int j = 1;
+                item.setID("");
+                item.setIcon(null);//图片采用默认的
+                item.setStd_id(sheet.getCell(j++, i).getContents().trim());
+                item.setStd_name(sheet.getCell(j++, i).getContents());
+                item.setStd_className(sheet.getCell(j, i).getContents());
+                item.setCaseSelection("0,0,0,0,0");
+                resultList.add(item);
+                if (j == cols) {
+                    continue;
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return resultList;

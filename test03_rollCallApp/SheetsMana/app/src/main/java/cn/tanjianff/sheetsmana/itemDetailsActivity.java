@@ -75,44 +75,7 @@ public class itemDetailsActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try{
-                    //stuSheet(String id, byte[] icon, String std_id, String std_name, String std_className, String caseSelection
-                    stuSheet stu = new stuSheet();
-                    stu.setID(posStr);
-
-                    ImagBiStorage imagBiStorage=new ImagBiStorage(getApplicationContext());
-                    Bitmap bitmap=imagBiStorage.drawable2Bitmap(icon.getDrawable());
-                    stu.setIcon(imagBiStorage.Img2Byte(bitmap));
-
-                    stu.setStd_name(editText_name.getText().toString());
-                    stu.setStd_id(editText_id.getText().toString());
-                    StringBuilder toAddCase=new StringBuilder();
-                    for(int i=0;i<checkBoxes.length;i++){
-                        if(checkBoxes[i].isChecked()){
-                            if(i==0){
-                                toAddCase.append("1");
-                            }else{
-                                toAddCase.append(",1");
-                            }
-                        }
-                        if(!checkBoxes[i].isChecked()) {
-                            if(i==0){
-                                toAddCase.append("0");
-                            }else{
-                                toAddCase.append(",0");
-                            }
-                        }
-                    }
-                    stu.setCaseSelection(toAddCase.toString());
-                    if(new CURDutil(getApplicationContext()).updateStuSheetItem(stu)){
-                        finish();
-                    }
-                    else{
-                        Toast.makeText(getApplicationContext(), "修改失败!", Toast.LENGTH_SHORT).show();
-                    }
-                }catch (Exception e){
-                    Toast.makeText(getApplicationContext(), "修改失败!", Toast.LENGTH_SHORT).show();
-                }
+                SubmitSaveEvent();
             }
         });
     }
@@ -134,6 +97,47 @@ public class itemDetailsActivity extends AppCompatActivity {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    //当点击'保存'按钮时,OnClickListener将调用此函数
+    public void SubmitSaveEvent() {
+        try {
+            //stuSheet(String id, byte[] icon, String std_id, String std_name, String std_className, String caseSelection
+            stuSheet stu = new stuSheet();
+            stu.setID(posStr);
+
+            ImagBiStorage imagBiStorage = new ImagBiStorage(getApplicationContext());
+            Bitmap bitmap = imagBiStorage.drawable2Bitmap(icon.getDrawable());
+            stu.setIcon(imagBiStorage.Img2Byte(bitmap));
+
+            stu.setStd_name(editText_name.getText().toString());
+            stu.setStd_id(editText_id.getText().toString());
+            StringBuilder toAddCase = new StringBuilder();
+            for (int i = 0; i < checkBoxes.length; i++) {
+                if (checkBoxes[i].isChecked()) {
+                    if (i == 0) {
+                        toAddCase.append("1");
+                    } else {
+                        toAddCase.append(",1");
+                    }
+                }
+                if (!checkBoxes[i].isChecked()) {
+                    if (i == 0) {
+                        toAddCase.append("0");
+                    } else {
+                        toAddCase.append(",0");
+                    }
+                }
+            }
+            stu.setCaseSelection(toAddCase.toString());
+            if (new CURDutil(getApplicationContext()).updateStuSheetItem(stu)) {
+                finish();
+            } else {
+                Toast.makeText(getApplicationContext(), "修改失败_01!", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "修改失败!_02", Toast.LENGTH_SHORT).show();
         }
     }
 
