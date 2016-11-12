@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="cn.tanjianff.sheetsmana">
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true"/>
@@ -26,6 +27,8 @@
         <activity android:name=".itemDetailsActivity">
         </activity>
         <activity android:name=".AddItemActivity">
+        </activity>
+        <activity android:name=".welcomeActivity">
         </activity>
     </application>
 
