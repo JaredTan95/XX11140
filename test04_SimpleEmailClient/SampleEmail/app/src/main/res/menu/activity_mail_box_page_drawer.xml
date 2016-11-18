@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_write"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="写信"/>
+        <item
+            android:id="@+id/menu_mailbox"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="收件箱"/>
+        <item
+            android:id="@+id/menu_sended"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="已发送"/>
+        <item
+            android:id="@+id/menu_addAccount"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="添加邮箱账户"/>
+    </group>
+</menu>

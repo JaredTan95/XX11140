@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">邮件</string>
+    <string name="othersemail">其他</string>
+    <string name="maintitle">欢迎使用\'邮件\'——By tanjian</string>
+
+    <string name="title_activity_mail_box_page">收件箱</string>
+
+    <string name="navigation_drawer_open">打开菜单</string>
+    <string name="navigation_drawer_close">关闭菜单</string>
+
+    <string name="action_settings">设置</string>
+</resources>
