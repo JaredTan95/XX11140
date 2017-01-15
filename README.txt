@@ -3,4 +3,4 @@
 00、test02_简易计算器App
 01、tes03_'点名啦'App
 02、test04_简易邮箱客户端App
-03、test05_QQLuckyMoneyPlugins:基于Xposed框架的抢QQ红包插件
+03、test05_QQLuckyMoney:基于Xposed框架的抢QQ红包插件
